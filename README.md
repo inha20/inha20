@@ -17,9 +17,8 @@ THANK YOU!
 >단락
 <details><summary한 줄 요약
 </summary>
-➜ pi@raspberrypi ; // 로그인한 사용자와 장치.<br>
-➜ sudo ; // root권한을 얻어 명령어를 실행한다. 흔히 강제실행으로 불린다.<br>
-➜apt ; // Debian 계열의 패키지 관리 도구.<br>
+➜ 항목1 ; // 설명1.<br>
+➜ 항목2 ; // 설명2.<br>
 </details>
 <details><summary>
 한 줄 요약
