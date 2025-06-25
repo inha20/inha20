@@ -32,10 +32,10 @@ https://github.com/inha20/IOT_Class_review-/issues/5
 
 <details><summary>한 줄 요약
 </summary>
-➜sudo apt-get install ibus ibus-hangul -y <br>
-&nbsp;&nbsp;&nbsp;&nbsp;⤷ 한글 입력기를 설치하는 명령어.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;⤷ ibus ; // 다양한 언어 입력을 지원하는 입력기 프레임워크.  Intelligent Input Bus(IBus). <br>
-&nbsp;&nbsp;&nbsp;&nbsp;⤷ ibus-hangul ; // 한글 입력을 가능하게 해주는 IBus용 한글 입력기.<br>
-➜sudo reboot <br>
+➜ 항목1 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;⤷ 설명1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;⤷ 특정 부분 1 ; // 설명2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;⤷ 특정 부분 2 ; // 설명3<br>
+➜항목2 <br>
 </details>
 ```
