@@ -1,30 +1,37 @@
-# 최종훈 (inha20)
+# 최종훈 | Jonghun Choi
 
-## Research Interests
-- Logic Design
-- Pattern Recognition
-- Human Cognition
-- AI in Education
-- Systems Thinking
+> Computer Science Student interested in Logic Design, Pattern Recognition, Human Cognition, and AI-assisted Education.
 
-## Current Research
-### Karnaugh Map Pattern Analysis
-Research on variable rearrangement, XOR/XNOR pattern recognition, symmetry detection, and structural interpretation of Karnaugh Maps.
+## About Me
+I enjoy discovering hidden structures inside complex systems.
+
+My recent work focuses on how humans recognize logical patterns visually, how structural understanding differs from generative AI prediction, and how these ideas can be applied to education.
+
+## Research Focus
+### Variable-Rearranged Karnaugh Map Analysis
+- XOR/XNOR pattern recognition
+- Symmetry detection (y = x, y = -x)
+- Structural invariance under variable rearrangement
+- Human visual interpretation of logical structures
 
 ### Human Cognition and Generative AI
-Exploring differences between human structural understanding and generative AI reasoning, with a focus on educational implications.
+- Structural understanding vs token prediction
+- Educational implications of AI-assisted learning
+- Human reasoning processes and pattern discovery
 
-## Projects
-- CarnomapMinorThesis
-- Research Portfolio (in progress)
-- Computer Science Learning Projects
+## Featured Repository
+### CarnomapMinorThesis
+Research on visual pattern interpretation methods for Karnaugh Maps and the relationship between logical structure and human cognition.
 
-## Goals for 2026
-- Complete and publish research papers
+## Current Goals
+- Publish research-oriented repositories
 - Build a public research portfolio
+- Connect theory with practical implementations
 - Develop educational tools based on logical pattern recognition
-- Connect research with practical implementations
+
+## Interests
+Logic Design · Pattern Recognition · Human Cognition · AI Education · Systems Thinking
 
 ---
 
-"Understanding structure is often more important than memorizing results."
+"Understanding a structure is different from memorizing its result."
