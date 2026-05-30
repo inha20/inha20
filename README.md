@@ -1,41 +1,30 @@
-## Hi there 👋
+# 최종훈 (inha20)
 
+## Research Interests
+- Logic Design
+- Pattern Recognition
+- Human Cognition
+- AI in Education
+- Systems Thinking
 
-**inha20/inha20** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## Current Research
+### Karnaugh Map Pattern Analysis
+Research on variable rearrangement, XOR/XNOR pattern recognition, symmetry detection, and structural interpretation of Karnaugh Maps.
 
-i)
-https://www.youtube.com/watch?v=Fley6IFhlC8&pp=ygUT6rmD7ZeI67iMIOyhsOy9lOuUqQ%3D%3D
-<br>
-ii)
-https://www.youtube.com/watch?v=w9DfC2BHGPA&pp=ygUT6rmD7ZeI67iMIOq-uOuvuOq4sA%3D%3D
-<br>
-THANK YOU!
-<br>
+### Human Cognition and Generative AI
+Exploring differences between human structural understanding and generative AI reasoning, with a focus on educational implications.
 
-```ThisIsMyGithubGrammer.txt
-# 예시 문법
->단락
-<details><summary한 줄 요약
-</summary>
-➜ 항목1 ; // 설명1.<br>
-➜ 항목2 ; // 설명2.<br>
-</details>
-<details><summary>
-한 줄 요약
-</summary>
-https://github.com/inha20/IOT_Class_review-/issues/5
-</details>
+## Projects
+- CarnomapMinorThesis
+- Research Portfolio (in progress)
+- Computer Science Learning Projects
 
+## Goals for 2026
+- Complete and publish research papers
+- Build a public research portfolio
+- Develop educational tools based on logical pattern recognition
+- Connect research with practical implementations
 
-> 단락
+---
 
-
-<details><summary>한 줄 요약
-</summary>
-➜ 항목1 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;⤷ 설명1<br>
-&nbsp;&nbsp;&nbsp;&nbsp;⤷ 특정 부분 1 ; // 설명2<br>
-&nbsp;&nbsp;&nbsp;&nbsp;⤷ 특정 부분 2 ; // 설명3<br>
-➜항목2 <br>
-</details>
-```
+"Understanding structure is often more important than memorizing results."
