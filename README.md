@@ -37,6 +37,7 @@ Theoretical Integration Layer
            ↓
 Application Domains
   Human-AI Collaboration  ·  AI Education  ·  Structure-Based Mathematics
+  Boolean Function Space Theory (Branch 8)
 ```
 
 ---
@@ -73,7 +74,7 @@ This work also explores **knowledge transfer**, **context management**, and **AI
 Observing and documenting specific structural phenomena in Boolean functions visualized through Karnaugh maps. Each paper is an independent case study with its own publication path.
 
 **Structure Recognition Theory — SRT (Paper 4)**  
-A meta-theoretical framework investigating how and why humans detect explanatory significance in observed patterns. Current hypotheses (H1–H7) span structure discovery, attention filtering, and the role of representation in research generation.
+A meta-theoretical framework investigating how and why humans detect explanatory significance in observed patterns. Current hypotheses (H1–H10) span structure discovery, attention filtering, the role of representation in research generation, and concept evolution as a generative mechanism (H8–H10, SRT v0.3 통합 확장 가설).
 
 **Human-AI Collaboration (Branch 5)**  
 An ongoing observation: humans detect structure and generate research questions; AI connects concepts and expands explanation space. This division of cognitive labor is itself a research subject.
@@ -83,6 +84,9 @@ Exploratory. How should collaboration with AI be taught? What skills distinguish
 
 **Structure-Based Elementary Mathematics (Branch 7)**  
 Exploratory. Reinterpreting elementary mathematics through pattern, structure, and meaning.
+
+**Boolean Function Space Theory (Branch 8)**  
+Active. Exploring how Boolean function spaces emerge from primitive operators and how these spaces can be recognized, classified, and transformed — extending the research program into applied mathematics via Karnaugh map geometry. Repository: [6BooleanFunctionSpaceTheory](https://inha20.github.io/6BooleanFunctionSpaceTheory/)
 
 ---
 

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jonghun Choi | Structure Recognition Research</title>
   <meta name="description" content="Research by Jonghun Choi (Inha University) on structure recognition, Boolean functions, visual pattern analysis, and human-AI collaboration.">
-  <meta name="keywords" content="Karnaugh map, Boolean function, structural invariance, structure recognition, symmetric Boolean function, variable rearrangement, Hamming weight, human-AI collaboration, visual pattern analysis">
+  <meta name="keywords" content="Karnaugh map, Boolean function, structural invariance, structure recognition, symmetric Boolean function, variable rearrangement, Hamming weight, human-AI collaboration, visual pattern analysis, Boolean function space, clone theory, gate universality, HARCT, research continuity">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -31,6 +31,12 @@
       color: #9fa8da;
       margin-top: 0.4rem;
     }
+    header .contact {
+      font-size: 0.88rem;
+      color: #90caf9;
+      margin-top: 0.4rem;
+    }
+    header .contact a { color: #90caf9; }
     header .tagline {
       margin-top: 1.2rem;
       font-size: 1.05rem;
@@ -77,6 +83,33 @@
       margin-bottom: 1.2rem;
     }
     section p { margin-bottom: 0.8rem; color: #2c2c54; }
+
+    /* ── About box ── */
+    .about-box {
+      background: #fff;
+      border: 1px solid #c5cae9;
+      border-radius: 8px;
+      padding: 1.5rem 1.8rem;
+    }
+    .about-box p { margin-bottom: 0.8rem; }
+    .about-insight {
+      background: #e8eaf6;
+      border-left: 4px solid #3949ab;
+      border-radius: 4px;
+      padding: 1rem 1.3rem;
+      margin: 1rem 0;
+      font-size: 0.93rem;
+      color: #1a1a2e;
+      line-height: 1.7;
+    }
+    .about-insight .insight-label {
+      font-weight: 700;
+      color: #1a237e;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.4rem;
+    }
 
     /* ── Architecture diagram ── */
     .arch-box {
@@ -190,6 +223,81 @@
     }
     footer a { color: #90caf9; }
 
+    /* ── Popup overlay ── */
+    #popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10, 10, 30, 0.7);
+      z-index: 9000;
+      align-items: center;
+      justify-content: center;
+    }
+    #popup-overlay.show {
+      display: flex;
+    }
+    #popup-card {
+      background: #fff;
+      border: 2px solid #3949ab;
+      border-radius: 12px;
+      padding: 2rem 2.2rem;
+      max-width: 380px;
+      width: 90%;
+      box-shadow: 0 8px 40px rgba(57, 73, 171, 0.25);
+      position: relative;
+      text-align: center;
+    }
+    #popup-card .popup-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 0.3rem;
+    }
+    #popup-card .popup-affil {
+      font-size: 0.92rem;
+      color: #4a4a6a;
+      margin-bottom: 0.15rem;
+    }
+    #popup-card .popup-sep {
+      border: none;
+      border-top: 1px solid #c5cae9;
+      margin: 1rem 0;
+    }
+    #popup-card .popup-row {
+      font-size: 0.9rem;
+      color: #2c2c54;
+      margin-bottom: 0.4rem;
+    }
+    #popup-card .popup-row a { color: #2563eb; }
+    #popup-close {
+      position: absolute;
+      top: 0.75rem; right: 0.9rem;
+      background: none; border: none;
+      font-size: 1.3rem; cursor: pointer;
+      color: #6b7280;
+      line-height: 1;
+    }
+    #popup-close:hover { color: #1a1a2e; }
+    .popup-btn-row {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .popup-btn {
+      background: #e8eaf6;
+      color: #1a237e;
+      border: 1px solid #c5cae9;
+      border-radius: 6px;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.82rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+    .popup-btn:hover { background: #c5cae9; }
+
     /* ── Responsive ── */
     @media (max-width: 600px) {
       header h1 { font-size: 1.5rem; }
@@ -199,15 +307,35 @@
 </head>
 <body>
 
+<!-- ── QR Popup ── -->
+<div id="popup-overlay" role="dialog" aria-modal="true" aria-label="명함 정보">
+  <div id="popup-card">
+    <button id="popup-close" aria-label="닫기">✕</button>
+    <p class="popup-name">최종훈 (Jonghun Choi)</p>
+    <p class="popup-affil">인하대학교 컴퓨터공학과</p>
+    <p class="popup-affil">Inha University · Computer Science</p>
+    <hr class="popup-sep">
+    <p class="popup-row">✉ <a href="mailto:cjh3cjh@naver.com">cjh3cjh@naver.com</a></p>
+    <p class="popup-row">🔬 Structure Recognition Research</p>
+    <p class="popup-row">🔗 <a href="https://github.com/inha20" target="_blank">github.com/inha20</a></p>
+    <div class="popup-btn-row">
+      <button class="popup-btn" id="btn-dismiss-2d">2일간 안 보기</button>
+      <button class="popup-btn" id="btn-dismiss-30d">한 달간 안 보기</button>
+    </div>
+  </div>
+</div>
+
 <!-- ── Header ── -->
 <header>
   <h1>Jonghun Choi <span style="font-weight:300;font-size:1.2rem">/ 최종훈</span></h1>
   <p class="sub">Computer Science · Inha University</p>
+  <p class="contact"><a href="mailto:cjh3cjh@naver.com">cjh3cjh@naver.com</a></p>
   <p class="tagline">"How do humans come to see something new?"</p>
 </header>
 
 <!-- ── Navigation ── -->
 <nav>
+  <a href="#about">About</a>
   <a href="#program">Research Program</a>
   <a href="#repositories">Repositories</a>
   <a href="#genealogy">Concept Genealogy</a>
@@ -218,6 +346,36 @@
 
 <!-- ── Main ── -->
 <main>
+
+  <!-- About Me -->
+  <section id="about">
+    <h2>About</h2>
+    <div class="about-box">
+      <p>
+        I am a Computer Science student at <strong>Inha University</strong>, conducting a long-term independent research program on <strong>Structure Recognition</strong> — the study of how humans discover structure, assign meaning to it, and generate new research questions from what they observe.
+      </p>
+      <p>
+        My research began with a simple observation: certain patterns in 4-variable Karnaugh maps — like the checkerboard formed by XOR/XNOR functions — feel <em>visually different</em> from other Boolean function patterns. That intuition grew into a series of connected studies on structural invariance, equivalence under variable rearrangement, and the cognitive mechanisms behind pattern recognition.
+      </p>
+
+      <div class="about-insight">
+        <p class="insight-label">A Starting Insight</p>
+        <p>
+          The 4-variable Boolean function space contains exactly <strong>2<sup>16</sup> = 65,536 distinct functions</strong>.
+          Under axis-swap symmetry — where F(A,B,C,D) = F(C,D,A,B) — these functions are not all structurally independent.
+          Some are symmetric under the swap, some form pairs, and some form larger orbits.
+        </p>
+        <p>
+          <strong>Research question:</strong> When the 65,536 functions are classified by axis-swap symmetry, how many distinct equivalence classes result?
+          This question — bridging group theory and combinatorics — is one of the active directions in the newest branch of this research program.
+        </p>
+      </div>
+
+      <p>
+        My research philosophy: <em>humans discover structure through visual and spatial intuition; AI expands the explanation space</em>. The collaboration between human structural insight and AI's capacity for systematic exploration is itself a research object — not just a method.
+      </p>
+    </div>
+  </section>
 
   <!-- Program Overview -->
   <section id="program">
@@ -230,7 +388,7 @@
     <p>
       The program began with specific Boolean function phenomena observed in
       Karnaugh maps and has expanded toward a broader meta-theoretical framework,
-      with branches into human-AI collaboration and education.
+      with branches into human-AI collaboration and Boolean function space theory.
     </p>
 
     <br>
@@ -243,8 +401,12 @@
       <span class="layer-label">Theoretical Integration Layer</span><br>
       &nbsp;&nbsp;Paper 4 — Structure Recognition Theory (SRT)<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+      <span class="layer-label">Applied Research Layer</span><br>
+      &nbsp;&nbsp;Paper 5 — Human-AI Research Collaboration (HARCT)<br>
+      &nbsp;&nbsp;Paper 6 — Boolean Function Space Theory (NEW)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br>
       <span class="layer-label">Application Domains</span><br>
-      &nbsp;&nbsp;Human-AI Collaboration &nbsp;·&nbsp; AI Education &nbsp;·&nbsp; Structure-Based Mathematics
+      &nbsp;&nbsp;AI Collaboration Education &nbsp;·&nbsp; Structure-Based Mathematics
     </div>
   </section>
 
@@ -255,37 +417,44 @@
 
       <div class="repo-card">
         <span class="tag tag-empirical">Empirical · Paper 1</span>
-        <h3><a href="https://inha20.github.io/1KMapStructureInvariance/" target="_blank">KMap Structure Invariance</a></h3>
-        <p>Visual pattern analysis of 4-variable Karnaugh maps. XOR/XNOR checkerboard structures and structural regularity under Gray code arrangements.</p>
-        <p class="status">Status: Stable</p>
+        <h3><a href="https://github.com/inha20/1KMapStructureInvariance" target="_blank">KMap Structure Invariance</a></h3>
+        <p>Visual pattern analysis of 4-variable Karnaugh maps. XOR/XNOR checkerboard structures and structural regularity under Gray code arrangements. D₄ group theory and equivalence class theory applied to pattern classification.</p>
+        <p class="status">Status: Stable — submission ready</p>
       </div>
 
       <div class="repo-card">
         <span class="tag tag-empirical">Empirical · Paper 2</span>
         <h3><a href="https://inha20.github.io/2SymmetricBooleanFunctionMinorThesis/" target="_blank">Symmetric Boolean Functions</a></h3>
-        <p>Symmetric Boolean functions visualized through Hamming Weight layers. Ring structures and layer-based pattern interpretation.</p>
+        <p>Symmetric Boolean functions visualized through Hamming Weight layers. Ring structures and layer-based pattern interpretation of all 65,536 four-variable Boolean functions.</p>
         <p class="status">Status: Stable</p>
       </div>
 
       <div class="repo-card">
         <span class="tag tag-empirical">Empirical · Paper 3</span>
-        <h3><a href="https://inha20.github.io/3VariableRearrangementInvarianceMinorThesis/" target="_blank">Variable Rearrangement Invariance</a></h3>
+        <h3><a href="https://github.com/inha20/3VariableRearrangementInvarianceMinorThesis" target="_blank">Variable Rearrangement Invariance</a></h3>
         <p>Structural invariance under variable rearrangement. Equivalence classes and symmetry preservation across different map arrangements.</p>
         <p class="status">Status: Active</p>
       </div>
 
       <div class="repo-card">
         <span class="tag tag-theory">Theory · Paper 4</span>
-        <h3><a href="https://inha20.github.io/4StructureRecognitionTheory/" target="_blank">Structure Recognition Theory</a></h3>
+        <h3><a href="https://github.com/inha20/4StructureRecognitionTheory" target="_blank">Structure Recognition Theory</a></h3>
         <p>Meta-theoretical framework explaining why certain structures become research-worthy. Hypotheses H1–H7 on structure discovery and research generation.</p>
         <p class="status">Status: Active — early-stage framework</p>
       </div>
 
       <div class="repo-card">
-        <span class="tag tag-new">New · Paper 5</span>
-        <h3><a href="https://inha20.github.io/5HumanAIResearchCollaboration/" target="_blank">Human-AI Research Collaboration</a></h3>
-        <p>Methods, observations, and case studies on long-term Human-AI research collaboration. Externalized memory, AI-to-AI handover, and multi-session context continuity.</p>
-        <p class="status">Status: Active — collecting cases</p>
+        <span class="tag tag-theory">Meta · Paper 5</span>
+        <h3><a href="https://github.com/inha20/5HumanAIResearchCollaboration" target="_blank">Human-AI Research Collaboration</a></h3>
+        <p>Methods, observations, and case studies on long-term Human-AI research collaboration. HARCT framework, externalized memory, AI-to-AI handover, and multi-session context continuity.</p>
+        <p class="status">Status: Active — paper complete</p>
+      </div>
+
+      <div class="repo-card">
+        <span class="tag tag-new">New · Paper 6</span>
+        <h3><a href="https://github.com/inha20/6BooleanFunctionSpaceTheory" target="_blank">Boolean Function Space Theory</a></h3>
+        <p>Gate-generated function spaces, structural classification of 65,536 four-variable Boolean functions, and Karnaugh map geometry of function classes. Applied mathematics extension of the research program.</p>
+        <p class="status">Status: New — initial exploration</p>
       </div>
 
       <div class="repo-card">
@@ -297,7 +466,7 @@
 
       <div class="repo-card">
         <span class="tag tag-infra">AI Workspace</span>
-        <h3><a href="https://inha20.github.io/ANTIGRAVITY/" target="_blank">ANTIGRAVITY</a></h3>
+        <h3><a href="https://github.com/inha20/ANTIGRAVITY" target="_blank">ANTIGRAVITY</a></h3>
         <p>AI collaboration workspace maintaining continuity between research sessions. Handover documents and session logs.</p>
         <p class="status">Status: Monitoring</p>
       </div>
@@ -362,8 +531,16 @@
 
       <div class="genealogy-step">
         <div>
+          <span class="genealogy-label">Boolean Function Space Theory</span><br>
+          <span class="genealogy-note">New direction: gate-generated function spaces as the mathematical domain for structural classification</span>
+        </div>
+      </div>
+      <div class="genealogy-arrow">↓</div>
+
+      <div class="genealogy-step">
+        <div>
           <span class="genealogy-label">Future Directions</span><br>
-          <span class="genealogy-note">AI Collaboration Education · Structure-Based Elementary Mathematics</span>
+          <span class="genealogy-note">AI Collaboration Education · Structure-Based Elementary Mathematics · Post Lattice × Karnaugh Map Geometry</span>
         </div>
       </div>
 
@@ -385,7 +562,11 @@
       <span>human-AI collaboration</span>
       <span>research question generation</span>
       <span>XOR/XNOR patterns</span>
-      <span>logic design</span>
+      <span>Boolean function space</span>
+      <span>clone theory</span>
+      <span>gate universality</span>
+      <span>HARCT</span>
+      <span>research continuity</span>
       <span>human cognition</span>
       <span>AI education</span>
     </div>
@@ -397,10 +578,54 @@
 <footer>
   <p>Jonghun Choi (최종훈) · Inha University · Structure Recognition Research Program</p>
   <p style="margin-top:0.5rem">
+    <a href="mailto:cjh3cjh@naver.com">cjh3cjh@naver.com</a> &nbsp;·&nbsp;
     <a href="https://github.com/inha20" target="_blank">GitHub</a> &nbsp;·&nbsp;
     <a href="https://inha20.github.io/Research-Portfolio/" target="_blank">Research Portfolio Hub</a>
   </p>
 </footer>
+
+<script>
+  // ── QR Popup Logic ──
+  const STORAGE_KEY = 'popup_dismiss_until';
+  const overlay = document.getElementById('popup-overlay');
+
+  function showPopup() {
+    overlay.classList.add('show');
+  }
+
+  function hidePopup() {
+    overlay.classList.remove('show');
+  }
+
+  function dismissFor(days) {
+    const until = Date.now() + days * 24 * 60 * 60 * 1000;
+    localStorage.setItem(STORAGE_KEY, String(until));
+    hidePopup();
+  }
+
+  // Show popup on load if not dismissed
+  (function checkPopup() {
+    const dismissUntil = localStorage.getItem(STORAGE_KEY);
+    if (!dismissUntil || Date.now() > Number(dismissUntil)) {
+      showPopup();
+    }
+  })();
+
+  // Button handlers
+  document.getElementById('popup-close').addEventListener('click', hidePopup);
+  document.getElementById('btn-dismiss-2d').addEventListener('click', function() { dismissFor(2); });
+  document.getElementById('btn-dismiss-30d').addEventListener('click', function() { dismissFor(30); });
+
+  // ESC key close
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') hidePopup();
+  });
+
+  // Click outside to close (without saving)
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) hidePopup();
+  });
+</script>
 
 </body>
 </html>
