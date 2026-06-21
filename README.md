@@ -42,16 +42,32 @@ Application Domains
 
 ---
 
-## Research Portfolio Hub
+## This Repository — Central Hub
 
-The central navigation point for the entire research program is the **[Research-Portfolio](https://inha20.github.io/Research-Portfolio/)** repository.
+This repository (`inha20`) serves as the **central hub** of the Structure Recognition Research Program. Research documentation, theory summaries, and AI collaboration workspace are maintained here.
 
-It provides:
-- Full program overview and research timeline
-- Concept genealogy mapping how ideas developed
-- Cross-repository navigation and planning documents
+### program/ & management/ — Research Program Documents
 
-> **[→ Visit the Research Portfolio Hub](https://inha20.github.io/Research-Portfolio/)**
+| File | Contents |
+|---|---|
+| [ResearchProgramOverview.md](program/ResearchProgramOverview.md) | Program structure, repository status, research evolution |
+| [ConceptGenealogy.md](program/ConceptGenealogy.md) | How each concept generated the next — program development history |
+| [ResearchTimeline.md](program/ResearchTimeline.md) | Complete developmental history by stage |
+| [ResearchProgramArchitecture.md](management/ResearchProgramArchitecture.md) | Branch map of all research directions |
+| [ResearchLog.md](program/ResearchLog.md) | Exploratory observations, hypotheses, and emerging ideas (Entries 1–18) |
+| [management/](management/) | SESSION_START, ProjectStatus, WorkOrderQueue, and management files |
+
+### theory/ — Structure Recognition Theory Summaries
+
+| File | Contents |
+|---|---|
+| [SRT_Summary.md](theory/SRT_Summary.md) | Formal definitions (Structure, Attention, Explanatory Significance), frameworks, empirical designs |
+| [Hypotheses_Summary.md](theory/Hypotheses_Summary.md) | H1–H10 summary table with status and formal definition connections |
+| [CoreQuestions_Summary.md](theory/CoreQuestions_Summary.md) | Q1–Q15 question hierarchy (Level 0–8), OP-01–OP-09 |
+
+> Full theory documents: [4StructureRecognitionTheory](https://inha20.github.io/4StructureRecognitionTheory/)
+
+
 
 ---
 
@@ -131,9 +147,9 @@ Difference → Attention → Structure → Meaning → Research Worthiness → Q
 
 ## Current Status (Summer 2026)
 
-Active work: Repository standardization · GitHub Pages deployment · Structure Recognition Theory development
+Active work: Repository content improvement (Phase 4) · SEO meta tags (Phase 5) · Structure Recognition Theory development
 
-Program hub: [Research-Portfolio](https://inha20.github.io/Research-Portfolio/)
+Central hub: this repository (`inha20`)
 
 ---
 

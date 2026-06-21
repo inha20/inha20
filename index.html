@@ -157,6 +157,42 @@
     }
     .tag-empirical { background: #e3f2fd; color: #1565c0; }
     .tag-theory    { background: #ede7f6; color: #4527a0; }
+    .tag-ai        { background: #fce4ec; color: #880e4f; }
+
+    /* ── Hub Docs ── */
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .hub-card {
+      background: #fff;
+      border: 1px solid #c5cae9;
+      border-radius: 8px;
+      padding: 1.3rem 1.5rem;
+      transition: box-shadow 0.15s, border-color 0.15s;
+    }
+    .hub-card:hover {
+      box-shadow: 0 4px 16px rgba(57, 73, 171, 0.12);
+      border-color: #3949ab;
+    }
+    .hub-card .hub-folder {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #3949ab;
+      background: #e8eaf6;
+      border-radius: 3px;
+      padding: 0.18rem 0.55rem;
+      display: inline-block;
+      margin-bottom: 0.6rem;
+    }
+    .hub-card h3 { font-size: 1rem; font-weight: 700; color: #1a237e; margin-bottom: 0.5rem; }
+    .hub-card ul { padding-left: 1.1rem; margin: 0; }
+    .hub-card ul li { font-size: 0.86rem; color: #4a4a6a; margin-bottom: 0.3rem; }
+    .hub-card ul li a { color: #2563eb; }
     .tag-infra     { background: #e8f5e9; color: #2e7d32; }
     .tag-new       { background: #fff3e0; color: #e65100; }
     .repo-card h3 { font-size: 1rem; font-weight: 700; color: #1a237e; margin-bottom: 0.35rem; }
@@ -337,11 +373,11 @@
 <nav>
   <a href="#about">About</a>
   <a href="#program">Research Program</a>
+  <a href="#hub-docs">Hub Docs</a>
   <a href="#repositories">Repositories</a>
   <a href="#genealogy">Concept Genealogy</a>
   <a href="#keywords">Keywords</a>
   <a href="https://github.com/inha20" target="_blank">GitHub Profile</a>
-  <a href="https://inha20.github.io/Research-Portfolio/" target="_blank">Portfolio Hub</a>
 </nav>
 
 <!-- ── Main ── -->
@@ -410,6 +446,53 @@
     </div>
   </section>
 
+  <!-- Hub Docs -->
+  <section id="hub-docs">
+    <h2>Central Hub Documents</h2>
+    <p>
+      This repository (<code>inha20</code>) is the central hub of the research program.
+      Research documentation, theory summaries, and AI collaboration files are maintained here.
+    </p>
+    <br>
+    <div class="hub-grid">
+
+      <div class="hub-card">
+        <span class="hub-folder">program/</span>
+        <h3>Research Program Documents</h3>
+        <ul>
+          <li><a href="program/ResearchProgramOverview.md">ResearchProgramOverview.md</a> — Program structure &amp; status</li>
+          <li><a href="program/ConceptGenealogy.md">ConceptGenealogy.md</a> — How each concept generated the next</li>
+          <li><a href="program/ResearchTimeline.md">ResearchTimeline.md</a> — Development history by stage</li>
+          <li><a href="program/ResearchProgramMap.md">ResearchProgramMap.md</a> — Branch map of all research directions</li>
+          <li><a href="program/ResearchLog.md">ResearchLog.md</a> — Exploratory observations &amp; hypotheses (Entries 1–18)</li>
+          <li><a href="program/ProjectManagement/MasterHandoverDocument.md">ProjectManagement/</a> — MasterHandover, ProjectStatus, AIHandoverInstructions &hellip;</li>
+        </ul>
+      </div>
+
+      <div class="hub-card">
+        <span class="hub-folder">theory/</span>
+        <h3>Structure Recognition Theory</h3>
+        <ul>
+          <li><a href="theory/SRT_Summary.md">SRT_Summary.md</a> — Formal definitions (Structure · Attention · Explanatory Significance), frameworks, empirical designs</li>
+          <li><a href="theory/Hypotheses_Summary.md">Hypotheses_Summary.md</a> — H1–H10 summary table with status &amp; formal connections</li>
+          <li><a href="theory/CoreQuestions_Summary.md">CoreQuestions_Summary.md</a> — Q1–Q15 question hierarchy (Level 0–8), OP-01–OP-09</li>
+        </ul>
+        <p style="font-size:0.82rem;color:#6b7280;margin-top:0.6rem;">Full documents → <a href="https://github.com/inha20/4StructureRecognitionTheory" target="_blank">4StructureRecognitionTheory</a></p>
+      </div>
+
+      <div class="hub-card">
+        <span class="hub-folder">ai-workspace/</span>
+        <h3>AI Collaboration Workspace</h3>
+        <ul>
+          <li><a href="ai-workspace/HANDOVER.md">HANDOVER.md</a> — Session handover: current phase, next priorities, repository status</li>
+          <li><a href="ai-workspace/OperatingPrinciples.md">OperatingPrinciples.md</a> — Core operating principles for AI collaborators</li>
+          <li><a href="ai-workspace/ProgramArchitecture.md">ProgramArchitecture.md</a> — Architecture B decision record (2026-06-05)</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Repositories -->
   <section id="repositories">
     <h2>Repositories</h2>
@@ -459,16 +542,16 @@
 
       <div class="repo-card">
         <span class="tag tag-infra">Program Hub</span>
-        <h3><a href="https://inha20.github.io/Research-Portfolio/" target="_blank">Research Portfolio</a></h3>
-        <p>Program navigation hub. Concept genealogy, research timeline, planning documents, and cross-repository links.</p>
-        <p class="status">Status: Active</p>
+        <h3><a href="https://github.com/inha20/Research-Portfolio" target="_blank">Research Portfolio</a></h3>
+        <p>Archived program hub repository. Core content consolidated into this central hub (<code>inha20</code>).</p>
+        <p class="status">Status: Archived</p>
       </div>
 
       <div class="repo-card">
-        <span class="tag tag-infra">AI Workspace</span>
+        <span class="tag tag-ai">AI Workspace</span>
         <h3><a href="https://github.com/inha20/ANTIGRAVITY" target="_blank">ANTIGRAVITY</a></h3>
-        <p>AI collaboration workspace maintaining continuity between research sessions. Handover documents and session logs.</p>
-        <p class="status">Status: Monitoring</p>
+        <p>AI collaboration workspace origin repository. Operational content consolidated into <a href="ai-workspace/HANDOVER.md">ai-workspace/</a> in this hub.</p>
+        <p class="status">Status: Archived</p>
       </div>
 
     </div>
@@ -580,7 +663,8 @@
   <p style="margin-top:0.5rem">
     <a href="mailto:cjh3cjh@naver.com">cjh3cjh@naver.com</a> &nbsp;·&nbsp;
     <a href="https://github.com/inha20" target="_blank">GitHub</a> &nbsp;·&nbsp;
-    <a href="https://inha20.github.io/Research-Portfolio/" target="_blank">Research Portfolio Hub</a>
+    <a href="#hub-docs">Hub Docs</a> &nbsp;·&nbsp;
+    <a href="ai-workspace/HANDOVER.md">AI Workspace</a>
   </p>
 </footer>
 
