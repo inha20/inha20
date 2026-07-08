@@ -7,7 +7,8 @@
 📐 StructuralMathematics — 구조로 보는 수학<br>
 🎮 ComputerScienceBehindMapleStory — 게임 이슈를 컴퓨터과학으로 분석<br><br>
 
-> 그 외 프로젝트는 실험, 학습, 개인 프로젝트 및 연구 기록입니다. 
+> 그 외 프로젝트는 실험, 학습, 개인 프로젝트 및 연구 기록입니다.
+
 <br><br><br><br>
 
 📖 Currently Working On
