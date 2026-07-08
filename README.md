@@ -21,4 +21,4 @@
 
 📖 Currently Working On
 
-- Comp
+- ComputerScienceOnMapleStory
