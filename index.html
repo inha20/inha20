@@ -1,715 +1,1237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jonghun Choi | Structure Recognition Research</title>
+  <title>Jonghun Choi (최종훈) | Structure Recognition Research</title>
   <meta name="description" content="Independent research by Jonghun Choi, a graduate of Inha Technical College, on structure recognition, Boolean functions, visual pattern analysis, and human-AI collaboration.">
-  <meta name="keywords" content="Karnaugh map, Boolean function, structural invariance, structure recognition, symmetric Boolean function, variable rearrangement, Hamming weight, human-AI collaboration, visual pattern analysis, Boolean function space, clone theory, gate universality, HARCT, research continuity">
+  <meta name="keywords" content="Karnaugh map, Boolean function, structural invariance, structure recognition, symmetric Boolean function, variable rearrangement, Hamming weight, human-AI collaboration, visual pattern analysis, Boolean function space, clone theory, gate universality, HARCT, research continuity, 최종훈, Jonghun Choi">
+
+  <!-- Google Fonts: Newsreader, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    :root {
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      /* Light Theme */
+      --bg: #fbfbf9;
+      --bg-alt: #f4f3ef;
+      --surface: #ffffff;
+      --border: #e6e3dc;
+      --border-focus: #254b8c;
+      --text: #1a1b26;
+      --text-muted: #575a6e;
+      --text-faint: #898c9f;
+
+      --accent: #254b8c;
+      --accent-hover: #1b3868;
+      --accent-glow: rgba(37, 75, 140, 0.08);
+      --accent-surface: #eef3fc;
+
+      --teal: #0d9488;
+      --teal-bg: #f0fdfa;
+      --amber: #d97706;
+      --amber-bg: #fffbeb;
+      --violet: #7c3aed;
+      --violet-bg: #f5f3ff;
+      --emerald: #059669;
+      --emerald-bg: #ecfdf5;
+
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+      --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+
+      --container-max: 1080px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0d0f17;
+      --bg-alt: #131622;
+      --surface: #181b2a;
+      --border: #262a3e;
+      --border-focus: #60a5fa;
+      --text: #f1f3fa;
+      --text-muted: #9ba1b9;
+      --text-faint: #636882;
+
+      --accent: #60a5fa;
+      --accent-hover: #93c5fd;
+      --accent-glow: rgba(96, 165, 250, 0.12);
+      --accent-surface: #162238;
+
+      --teal: #2dd4bf;
+      --teal-bg: #11292b;
+      --amber: #fbbf24;
+      --amber-bg: #292011;
+      --violet: #a78bfa;
+      --violet-bg: #261b3e;
+      --emerald: #34d399;
+      --emerald-bg: #112d22;
+
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.35);
+      --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.5);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
       font-size: 16px;
-      line-height: 1.7;
-      color: #1a1a2e;
-      background: #f8f9fc;
-    }
-    a { color: #2563eb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* ── Header ── */
-    header {
-      background: #1a1a2e;
-      color: #e8eaf6;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-    }
-    header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
-    header .sub {
-      font-size: 1rem;
-      color: #9fa8da;
-      margin-top: 0.4rem;
-    }
-    header .contact {
-      font-size: 0.88rem;
-      color: #90caf9;
-      margin-top: 0.4rem;
-    }
-    header .contact a { color: #90caf9; }
-    header .tagline {
-      margin-top: 1.2rem;
-      font-size: 1.05rem;
-      font-style: italic;
-      color: #c5cae9;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
-    /* ── Nav ── */
-    nav {
-      background: #16213e;
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.75;
+      letter-spacing: -0.01em;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      min-height: 100vh;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0;
+      flex-direction: column;
+      background-image: radial-gradient(var(--border) 1px, transparent 1px);
+      background-size: 32px 32px;
     }
-    nav a {
-      color: #90caf9;
-      padding: 0.75rem 1.4rem;
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 0.3px;
-      transition: background 0.15s;
-    }
-    nav a:hover { background: #1a237e; text-decoration: none; }
 
-    /* ── Main layout ── */
-    main {
-      max-width: 900px;
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: var(--accent-hover);
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
       margin: 0 auto;
-      padding: 2.5rem 1.5rem;
+      padding: 0 1.5rem;
     }
 
-    /* ── Section ── */
-    section { margin-bottom: 3rem; }
-    section h2 {
-      font-size: 1.3rem;
+    /* Top Sticky Navigation Bar */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(251, 251, 249, 0.85);
+      border-bottom: 1px solid var(--border);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+    [data-theme="dark"] .site-header {
+      background: rgba(13, 15, 23, 0.85);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent), #4338ca);
+      color: white;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
       font-weight: 700;
-      color: #1a237e;
-      border-bottom: 2px solid #c5cae9;
-      padding-bottom: 0.4rem;
-      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 8px var(--accent-glow);
     }
-    section p { margin-bottom: 0.8rem; color: #2c2c54; }
 
-    /* ── About box ── */
-    .about-box {
-      background: #fff;
-      border: 1px solid #c5cae9;
-      border-radius: 8px;
-      padding: 1.5rem 1.8rem;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.88rem;
+      font-weight: 500;
     }
-    .about-box p { margin-bottom: 0.8rem; }
-    .about-insight {
-      background: #e8eaf6;
-      border-left: 4px solid #3949ab;
-      border-radius: 4px;
-      padding: 1rem 1.3rem;
-      margin: 1rem 0;
-      font-size: 0.93rem;
-      color: #1a1a2e;
+    .nav-links a {
+      color: var(--text-muted);
+    }
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .theme-toggle-btn, .icon-btn {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      color: var(--text);
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .theme-toggle-btn:hover, .icon-btn:hover {
+      background: var(--surface);
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: var(--shadow-sm);
+    }
+    .theme-toggle-btn svg, .icon-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Hero Banner */
+    .hero {
+      padding: 4.5rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .role-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.75rem;
+      background: var(--accent-surface);
+      color: var(--accent);
+      border: 1px solid rgba(37, 75, 140, 0.2);
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 3.2rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .hero-contact {
+      font-size: 0.92rem;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      margin-bottom: 1.8rem;
+    }
+
+    .epistemological-card {
+      background: linear-gradient(135deg, var(--surface), var(--accent-surface));
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius-md);
+      padding: 1.4rem 1.8rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .epistemological-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .epistemological-quote {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    /* Section Styling */
+    .section-wrap {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-header {
+      margin-bottom: 1.8rem;
+    }
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      display: inline-block;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.015em;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-top: 0.3rem;
+      max-width: 760px;
+    }
+
+    /* Content Cards & Boxes */
+    .card-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.8rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .card-box p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.8;
+    }
+    .card-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .callout-box {
+      background: var(--bg-alt);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem 1.5rem;
+      margin: 1.4rem 0;
+    }
+    .callout-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .callout-body {
+      font-size: 0.95rem;
+      color: var(--text);
       line-height: 1.7;
     }
-    .about-insight .insight-label {
-      font-weight: 700;
-      color: #1a237e;
-      font-size: 0.82rem;
+
+    /* Program Architecture Visualizer */
+    .arch-visualizer {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      box-shadow: var(--shadow-md);
+    }
+    .arch-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+    .arch-layer {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--bg-alt);
+      padding: 1.3rem 1.5rem;
+      transition: all 0.25s ease;
+    }
+    .arch-layer:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-sm);
+    }
+    .layer-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.6rem;
+    }
+    .layer-badge.empirical { background: var(--teal-bg); color: var(--teal); border: 1px solid rgba(13,148,136,0.2); }
+    .layer-badge.theory { background: var(--violet-bg); color: var(--violet); border: 1px solid rgba(124,58,237,0.2); }
+    .layer-badge.applied { background: var(--amber-bg); color: var(--amber); border: 1px solid rgba(217,119,6,0.2); }
+    .layer-badge.domain { background: var(--emerald-bg); color: var(--emerald); border: 1px solid rgba(5,150,105,0.2); }
+
+    .layer-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: var(--text);
+    }
+    .layer-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+    .layer-subitems {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+    .subitem-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.6rem 0.9rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+    .subitem-chip:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Hub Docs Grid */
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.2rem;
+    }
+    .hub-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+    .hub-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-focus);
+    }
+    .hub-badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-surface);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+    .hub-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .hub-card ul {
+      padding-left: 1.2rem;
+      margin-bottom: 1rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .hub-card ul li {
       margin-bottom: 0.4rem;
     }
 
-    /* ── Architecture diagram ── */
-    .arch-box {
-      background: #e8eaf6;
-      border-left: 4px solid #3949ab;
-      border-radius: 4px;
-      padding: 1.2rem 1.5rem;
-      font-family: 'Courier New', monospace;
-      font-size: 0.9rem;
-      color: #1a1a2e;
-      line-height: 1.9;
-      overflow-x: auto;
-    }
-    .arch-box .layer-label {
-      font-weight: 700;
-      color: #1a237e;
-    }
-
-    /* ── Repo grid ── */
+    /* Repositories Grid */
     .repo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 1.4rem;
     }
     .repo-card {
-      background: #fff;
-      border: 1px solid #c5cae9;
-      border-radius: 8px;
-      padding: 1.2rem;
-      transition: box-shadow 0.15s, border-color 0.15s;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
     }
     .repo-card:hover {
-      box-shadow: 0 4px 16px rgba(57, 73, 171, 0.12);
-      border-color: #3949ab;
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-focus);
     }
-    .repo-card .tag {
-      display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 700;
+    .rc-role {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 0.2rem 0.55rem;
-      border-radius: 3px;
-      margin-bottom: 0.6rem;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
     }
-    .tag-empirical { background: #e3f2fd; color: #1565c0; }
-    .tag-theory    { background: #ede7f6; color: #4527a0; }
-    .tag-ai        { background: #fce4ec; color: #880e4f; }
-
-    /* ── Hub Docs ── */
-    .hub-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1rem;
-      margin-top: 0.5rem;
-    }
-    .hub-card {
-      background: #fff;
-      border: 1px solid #c5cae9;
-      border-radius: 8px;
-      padding: 1.3rem 1.5rem;
-      transition: box-shadow 0.15s, border-color 0.15s;
-    }
-    .hub-card:hover {
-      box-shadow: 0 4px 16px rgba(57, 73, 171, 0.12);
-      border-color: #3949ab;
-    }
-    .hub-card .hub-folder {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #3949ab;
-      background: #e8eaf6;
-      border-radius: 3px;
-      padding: 0.18rem 0.55rem;
-      display: inline-block;
-      margin-bottom: 0.6rem;
-    }
-    .hub-card h3 { font-size: 1rem; font-weight: 700; color: #1a237e; margin-bottom: 0.5rem; }
-    .hub-card ul { padding-left: 1.1rem; margin: 0; }
-    .hub-card ul li { font-size: 0.86rem; color: #4a4a6a; margin-bottom: 0.3rem; }
-    .hub-card ul li a { color: #2563eb; }
-    .tag-infra     { background: #e8f5e9; color: #2e7d32; }
-    .tag-new       { background: #fff3e0; color: #e65100; }
-    .repo-card h3 { font-size: 1rem; font-weight: 700; color: #1a237e; margin-bottom: 0.35rem; }
-    .repo-card h3 a { color: inherit; }
-    .repo-card p  { font-size: 0.88rem; color: #4a4a6a; margin-bottom: 0.4rem; }
-    .repo-card .status {
-      font-size: 0.78rem;
-      color: #6b7280;
-      font-style: italic;
-    }
-
-    /* ── Genealogy ── */
-    .genealogy {
-      background: #fff;
-      border: 1px solid #c5cae9;
-      border-radius: 8px;
-      padding: 1.5rem;
-    }
-    .genealogy-step {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      margin-bottom: 0.15rem;
-    }
-    .genealogy-arrow {
-      color: #3949ab;
+    .rc-title {
+      font-family: var(--font-serif);
       font-size: 1.2rem;
-      line-height: 1.6;
-      flex-shrink: 0;
-      margin-left: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.4rem;
     }
-    .genealogy-label {
-      font-weight: 700;
-      color: #1a237e;
+    .rc-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+      flex-grow: 1;
+    }
+    .rc-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+    }
+    .rc-status {
+      font-style: italic;
+      color: var(--text-faint);
+    }
+
+    /* Genealogy Timeline */
+    .genealogy-timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin-top: 1.5rem;
+    }
+    .genealogy-timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: var(--border);
+    }
+    .genealogy-node-item {
+      position: relative;
+      margin-bottom: 1.8rem;
+    }
+    .genealogy-node-item:last-child {
+      margin-bottom: 0;
+    }
+    .genealogy-circle {
+      position: absolute;
+      left: -2rem;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--bg);
+    }
+    .genealogy-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.2rem;
     }
     .genealogy-note {
-      font-size: 0.85rem;
-      color: #6b7280;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
 
-    /* ── Keywords ── */
-    .keyword-list {
+    /* Keywords Cloud */
+    .keyword-cloud {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-    }
-    .keyword-list span {
-      background: #e8eaf6;
-      color: #283593;
-      font-size: 0.85rem;
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      border: 1px solid #c5cae9;
-    }
-
-    /* ── Footer ── */
-    footer {
-      background: #1a1a2e;
-      color: #9fa8da;
-      text-align: center;
-      padding: 1.8rem 1.5rem;
-      font-size: 0.88rem;
       margin-top: 1rem;
     }
-    footer a { color: #90caf9; }
+    .keyword-pill {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      padding: 0.35rem 0.85rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+    .keyword-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--surface);
+    }
 
-    /* ── Popup overlay ── */
+    /* QR / Visiting Card Modal Overlay */
     #popup-overlay {
-      display: none;
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(10, 10, 30, 0.7);
-      z-index: 9000;
+      inset: 0;
+      background: rgba(13, 15, 23, 0.6);
+      backdrop-filter: blur(8px);
+      display: flex;
       align-items: center;
       justify-content: center;
+      z-index: 2000;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
     }
     #popup-overlay.show {
-      display: flex;
+      opacity: 1;
+      visibility: visible;
     }
     #popup-card {
-      background: #fff;
-      border: 2px solid #3949ab;
-      border-radius: 12px;
-      padding: 2rem 2.2rem;
-      max-width: 380px;
-      width: 90%;
-      box-shadow: 0 8px 40px rgba(57, 73, 171, 0.25);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      max-width: 440px;
+      width: 100%;
+      box-shadow: var(--shadow-lg);
       position: relative;
-      text-align: center;
+      transform: scale(0.95);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    #popup-card .popup-name {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #1a1a2e;
-      margin-bottom: 0.3rem;
+    #popup-overlay.show #popup-card {
+      transform: scale(1);
     }
-    #popup-card .popup-affil {
-      font-size: 0.92rem;
-      color: #4a4a6a;
-      margin-bottom: 0.15rem;
-    }
-    #popup-card .popup-sep {
-      border: none;
-      border-top: 1px solid #c5cae9;
-      margin: 1rem 0;
-    }
-    #popup-card .popup-row {
-      font-size: 0.9rem;
-      color: #2c2c54;
-      margin-bottom: 0.4rem;
-    }
-    #popup-card .popup-row a { color: #2563eb; }
     #popup-close {
       position: absolute;
-      top: 0.75rem; right: 0.9rem;
-      background: none; border: none;
-      font-size: 1.3rem; cursor: pointer;
-      color: #6b7280;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
       line-height: 1;
+      transition: all 0.2s ease;
     }
-    #popup-close:hover { color: #1a1a2e; }
+    #popup-close:hover {
+      background: var(--surface);
+      color: var(--text);
+    }
+    .popup-avatar {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--accent), #4338ca);
+      color: white;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+    .popup-name {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+    .popup-affil {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+    .popup-sep {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 1.2rem 0;
+    }
+    .popup-row {
+      font-size: 0.88rem;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
     .popup-btn-row {
       display: flex;
-      gap: 0.6rem;
-      margin-top: 1.2rem;
-      justify-content: center;
-      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
     }
     .popup-btn {
-      background: #e8eaf6;
-      color: #1a237e;
-      border: 1px solid #c5cae9;
-      border-radius: 6px;
-      padding: 0.45rem 0.9rem;
+      flex: 1;
+      padding: 0.6rem 1rem;
+      border: 1px solid var(--border);
+      background: var(--bg-alt);
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
       font-size: 0.82rem;
+      font-weight: 500;
       cursor: pointer;
-      font-family: inherit;
-      transition: background 0.15s;
+      transition: all 0.2s ease;
     }
-    .popup-btn:hover { background: #c5cae9; }
+    .popup-btn:hover {
+      background: var(--surface);
+      color: var(--text);
+      border-color: var(--accent);
+    }
 
-    /* ── Responsive ── */
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.5rem; }
-      nav a { padding: 0.6rem 1rem; font-size: 0.85rem; }
+    /* Footer */
+    .site-footer {
+      margin-top: auto;
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 3rem 0 2rem; }
+      .nav-links { display: none; }
+      .arch-visualizer { padding: 1.2rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- ── QR Popup ── -->
-<div id="popup-overlay" role="dialog" aria-modal="true" aria-label="명함 정보">
-  <div id="popup-card">
-    <button id="popup-close" aria-label="닫기">✕</button>
-    <p class="popup-name">최종훈 (Jonghun Choi)</p>
-    <p class="popup-affil">독립 연구자 · 인하공업전문대학 출신</p>
-    <p class="popup-affil">Independent researcher · Graduate of Inha Technical College</p>
-    <hr class="popup-sep">
-    <p class="popup-row">✉ <a href="mailto:cjh3cjh@naver.com">cjh3cjh@naver.com</a></p>
-    <p class="popup-row">🔬 Structure Recognition Research</p>
-    <p class="popup-row">🔗 <a href="https://github.com/inha20" target="_blank">github.com/inha20</a></p>
-    <div class="popup-btn-row">
-      <button class="popup-btn" id="btn-dismiss-2d">2일간 안 보기</button>
-      <button class="popup-btn" id="btn-dismiss-30d">한 달간 안 보기</button>
+  <!-- Visiting Card / QR Popup Overlay -->
+  <div id="popup-overlay" role="dialog" aria-modal="true" aria-label="연구자 명함 정보">
+    <div id="popup-card">
+      <button id="popup-close" aria-label="닫기">×</button>
+      <div class="popup-avatar">JC</div>
+      <h3 class="popup-name">최종훈 (Jonghun Choi)</h3>
+      <p class="popup-affil">독립 연구자 · 인하공업전문대학 졸업</p>
+      <p class="popup-affil">Independent Researcher · Graduate of Inha Technical College</p>
+      <hr class="popup-sep">
+      <p class="popup-row">
+        <span>✉</span> <a href="mailto:cjh3cjh@naver.com">cjh3cjh@naver.com</a>
+      </p>
+      <p class="popup-row">
+        <span>🔬</span> Structure Recognition Research Program
+      </p>
+      <p class="popup-row">
+        <span>💻</span> <a href="https://github.com/inha20" target="_blank" rel="noopener">github.com/inha20</a>
+      </p>
+      <div class="popup-btn-row">
+        <button class="popup-btn" id="btn-dismiss-2d">2일간 안 보기</button>
+        <button class="popup-btn" id="btn-dismiss-30d">30일간 안 보기</button>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- ── Header ── -->
-<header>
-  <h1>Jonghun Choi <span style="font-weight:300;font-size:1.2rem">/ 최종훈</span></h1>
-  <p class="sub">Independent researcher · Graduate of Inha Technical College</p>
-  <p class="contact"><a href="mailto:cjh3cjh@naver.com">cjh3cjh@naver.com</a></p>
-  <p class="tagline">"How do humans come to see something new?"</p>
-</header>
+  <!-- Top Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-mark">JC</div>
+        <div>
+          <span>Jonghun Choi</span>
+          <span style="color: var(--text-faint); font-weight: 400; margin-left: 4px; font-size: 0.85rem;">/ 최종훈</span>
+        </div>
+      </div>
 
-<!-- ── Navigation ── -->
-<nav>
-  <a href="#about">About</a>
-  <a href="#program">Research Program</a>
-  <a href="#hub-docs">Hub Docs</a>
-  <a href="#repositories">Repositories</a>
-  <a href="#genealogy">Concept Genealogy</a>
-  <a href="#keywords">Keywords</a>
-  <a href="https://github.com/inha20" target="_blank">GitHub Profile</a>
-</nav>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#program">Research Program</a>
+        <a href="#hub-docs">Hub Docs</a>
+        <a href="#repositories">Repositories</a>
+        <a href="#genealogy">Genealogy</a>
+        <a href="#keywords">Keywords</a>
+      </nav>
 
-<!-- ── Main ── -->
-<main>
+      <div class="nav-actions">
+        <button id="openCardBtn" class="icon-btn" title="Visiting Card (명함)" aria-label="Open Visiting Card">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </button>
+        <a href="https://github.com/inha20" target="_blank" rel="noopener" class="icon-btn" title="GitHub Profile">
+          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        </a>
+        <button id="themeToggle" class="theme-toggle-btn" title="Toggle Theme" aria-label="Toggle theme">
+          <svg id="themeIcon" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-  <!-- About Me -->
-  <section id="about">
-    <h2>About</h2>
-    <div class="about-box">
-      <p>
-        I am an independent researcher and a graduate of <strong>Inha Technical College</strong>, conducting a long-term research program on <strong>Structure Recognition</strong> — the study of how humans discover structure, assign meaning to it, and generate new research questions from what they observe.
-      </p>
-      <p>
-        My research began with a simple observation: certain patterns in 4-variable Karnaugh maps — like the checkerboard formed by XOR/XNOR functions — feel <em>visually different</em> from other Boolean function patterns. That intuition grew into a series of connected studies on structural invariance, equivalence under variable rearrangement, and the cognitive mechanisms behind pattern recognition.
-      </p>
+  <main class="container">
 
-      <div class="about-insight">
-        <p class="insight-label">A Starting Insight</p>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-meta">
+        <span class="role-badge">Independent Researcher</span>
+        <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-faint);">Structure Recognition Program Hub</span>
+      </div>
+
+      <h1 class="hero-title">Jonghun Choi <span style="font-weight: 300; font-size: 1.5rem; color: var(--text-muted);">/ 최종훈</span></h1>
+      <p class="hero-sub">Independent Researcher · Graduate of Inha Technical College</p>
+      <div class="hero-contact">
+        <a href="mailto:cjh3cjh@naver.com">✉ cjh3cjh@naver.com</a> &nbsp;·&nbsp;
+        <a href="https://github.com/inha20" target="_blank" rel="noopener">GitHub Profile (@inha20)</a>
+      </div>
+
+      <div class="epistemological-card">
+        <div class="epistemological-label">Core Epistemological Question</div>
+        <div class="epistemological-quote">
+          “How do humans come to see something new?”
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section-wrap" id="about">
+      <div class="section-header">
+        <span class="section-tag">Biography & Philosophy</span>
+        <h2 class="section-title">About the Research</h2>
+      </div>
+
+      <div class="card-box">
         <p>
-          The 4-variable Boolean function space contains exactly <strong>2<sup>16</sup> = 65,536 distinct functions</strong>.
-          Under axis-swap symmetry — where F(A,B,C,D) = F(C,D,A,B) — these functions are not all structurally independent.
-          Some are symmetric under the swap, some form pairs, and some form larger orbits.
+          I am an independent researcher and a graduate of <strong>Inha Technical College</strong>, conducting a long-term research program on <strong>Structure Recognition</strong> — the study of how humans discover structure, assign meaning to it, and generate new research questions from what they observe.
         </p>
         <p>
-          <strong>Research question:</strong> When the 65,536 functions are classified by axis-swap symmetry, how many distinct equivalence classes result?
-          This question — bridging group theory and combinatorics — is one of the active directions in the newest branch of this research program.
+          My research began with a simple empirical observation: certain patterns in 4-variable Karnaugh maps — like the checkerboard formed by XOR/XNOR functions — feel <em>visually distinct</em> from other Boolean function patterns. That intuition evolved into a series of interconnected investigations into structural invariance, topological equivalence under variable permutations, and the cognitive mechanisms underlying mathematical insight.
+        </p>
+
+        <div class="callout-box">
+          <div class="callout-label">A Starting Insight & Active Direction</div>
+          <div class="callout-body">
+            The 4-variable Boolean function space contains exactly <strong>2<sup>16</sup> = 65,536 distinct functions</strong>.
+            Under axis-swap symmetry — where F(A,B,C,D) = F(C,D,A,B) — these functions are not all structurally independent. Some are symmetric under the swap, some form pairs, and others form larger orbits.<br><br>
+            <strong>Research Question:</strong> When the 65,536 functions are classified by axis-swap symmetry and gate generators, how many distinct equivalence classes result? This question bridges group theory and combinatorics, forming the foundation of Branch 8 (Boolean Function Space Theory).
+          </div>
+        </div>
+
+        <p>
+          <strong>Research Philosophy:</strong> <em>Humans discover structure through visual and spatial intuition; AI expands the explanation space.</em> The collaboration between human structural insight and AI's capacity for systematic combinatorial exploration is itself an object of rigorous study — not merely a convenience.
+        </p>
+      </div>
+    </section>
+
+    <!-- Program Overview & Architecture -->
+    <section class="section-wrap" id="program">
+      <div class="section-header">
+        <span class="section-tag">Program Architecture</span>
+        <h2 class="section-title">The Unified Research Program</h2>
+        <p class="section-desc">
+          Four distinct layers connecting empirical observation directly to cognitive formalization and mathematical extension.
         </p>
       </div>
 
-      <p>
-        My research philosophy: <em>humans discover structure through visual and spatial intuition; AI expands the explanation space</em>. The collaboration between human structural insight and AI's capacity for systematic exploration is itself a research object — not just a method.
-      </p>
+      <div class="arch-visualizer">
+        <div class="arch-grid">
+
+          <div class="arch-layer">
+            <span class="layer-badge empirical">Layer 1 · Empirical Foundation Layer</span>
+            <div class="layer-title">Empirical Case Studies</div>
+            <div class="layer-desc">Concrete observational data from Boolean symmetries and visual Karnaugh mappings.</div>
+            <div class="layer-subitems">
+              <div class="subitem-chip">Paper 1: Karnaugh Map Structure Invariance</div>
+              <div class="subitem-chip">Paper 2: Symmetric Boolean Visual Patterns</div>
+              <div class="subitem-chip">Paper 3: Variable Rearrangement Invariance</div>
+            </div>
+          </div>
+
+          <div class="arch-layer">
+            <span class="layer-badge theory">Layer 2 · Theoretical Integration Layer</span>
+            <div class="layer-title">Structure Recognition Theory (SRT)</div>
+            <div class="layer-desc">General cognitive architecture modeling how structure triggers inquiry (Hypotheses H1–H10).</div>
+            <div class="layer-subitems">
+              <div class="subitem-chip">Paper 4: Structure Recognition Theory (SRT Hub)</div>
+            </div>
+          </div>
+
+          <div class="arch-layer">
+            <span class="layer-badge applied">Layer 3 · Applied Research & Methodology</span>
+            <div class="layer-title">Human-AI Research Continuity & Mathematics</div>
+            <div class="layer-desc">Long-term collaboration mechanisms and function space classification.</div>
+            <div class="layer-subitems">
+              <div class="subitem-chip">Paper 5: Human-AI Collaboration (HARCT)</div>
+              <div class="subitem-chip">Paper 6: Boolean Function Space Theory (Branch 8)</div>
+            </div>
+          </div>
+
+          <div class="arch-layer">
+            <span class="layer-badge domain">Layer 4 · Application Domains</span>
+            <div class="layer-title">Broader Educational & Mathematical Impact</div>
+            <div class="layer-desc">AI Collaboration Education · Structure-Based Elementary Mathematics.</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Hub Docs -->
+    <section class="section-wrap" id="hub-docs">
+      <div class="section-header">
+        <span class="section-tag">Core Documents</span>
+        <h2 class="section-title">Central Hub Documents</h2>
+        <p class="section-desc">
+          Root documentation, operational protocols, and formal definitions consolidating the research program.
+        </p>
+      </div>
+
+      <div class="callout-box" style="margin-top: 0; margin-bottom: 1.5rem;">
+        <div class="callout-label">2026-06-21 구조 통합 (Session 33)</div>
+        <div class="callout-body">
+          이전의 <code>program/</code>, <code>theory/</code>, <code>ai-workspace/</code> 하위 폴더 문서들이 아래 루트 파일들로 체계적으로 통합되었습니다.
+        </div>
+      </div>
+
+      <div class="hub-grid">
+        <div class="hub-card">
+          <div>
+            <span class="hub-badge">AI Single Entry Point</span>
+            <h3><a href="SESSION_START.md">SESSION_START.md</a></h3>
+            <ul>
+              <li>AI 단일 진입점 (v5.4) — 프로그램 전체 구조 & AI 운영 원칙</li>
+              <li>Active Queue & Repository Health (작업 현황 종합)</li>
+              <li>Critical Workflow Rules & Four-Paper Architecture (B)</li>
+              <li>Session History (Sessions 45–70+)</li>
+            </ul>
+          </div>
+          <a href="SESSION_START.md" style="font-size: 0.85rem; font-weight: 600;">Open Document ↗</a>
+        </div>
+
+        <div class="hub-card">
+          <div>
+            <span class="hub-badge">Theoretical Synthesis</span>
+            <h3><a href="StructureRecognitionTheory_Unified.md">StructureRecognitionTheory_Unified.md</a></h3>
+            <ul>
+              <li>Formal Definitions 3.1–3.3 (Structure · Attention · Explanatory Significance)</li>
+              <li>H1–H10 Hypotheses — Research Generation + Concept Evolution</li>
+              <li>Q1–Q15 Question Hierarchy (Level 0–3), OP-01–OP-09</li>
+            </ul>
+          </div>
+          <a href="https://inha20.github.io/4StructureRecognitionTheory/" target="_blank" rel="noopener" style="font-size: 0.85rem; font-weight: 600;">Full Theory Hub ↗</a>
+        </div>
+
+        <div class="hub-card">
+          <div>
+            <span class="hub-badge">Proposal Outline</span>
+            <h3><a href="HumanAICollaborationProposal_Outline.md">HumanAICollaborationProposal_Outline.md</a></h3>
+            <ul>
+              <li>Human-AI 협업 연구 제안서 개요</li>
+              <li>협업 모델 · 연구 질문 생성 구조 · 장기 프로그램 설계</li>
+            </ul>
+          </div>
+          <a href="HumanAICollaborationProposal_Outline.md" style="font-size: 0.85rem; font-weight: 600;">Open Proposal ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Repositories Section -->
+    <section class="section-wrap" id="repositories">
+      <div class="section-header">
+        <span class="section-tag">Repositories Directory</span>
+        <h2 class="section-title">Peer Repositories</h2>
+      </div>
+
+      <div class="repo-grid">
+        <div class="repo-card">
+          <div>
+            <div class="rc-role">Empirical · Paper 1</div>
+            <h3 class="rc-title"><a href="https://inha20.github.io/1KMapStructureInvariance/" target="_blank" rel="noopener">KMap Structure Invariance</a></h3>
+            <p class="rc-desc">Structural invariance of Karnaugh map checkerboard patterns under geometric transformations.</p>
+          </div>
+          <div class="rc-footer">
+            <span class="rc-status">Status: Stable</span>
+            <a href="https://github.com/inha20/1KMapStructureInvariance" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="repo-card">
+          <div>
+            <div class="rc-role">Empirical · Paper 2</div>
+            <h3 class="rc-title"><a href="https://inha20.github.io/2SymmetricBooleanFunctionMinorThesis/" target="_blank" rel="noopener">Symmetric Boolean Functions</a></h3>
+            <p class="rc-desc">Hamming-weight layers and concentric ring structures in symmetric Boolean function patterns.</p>
+          </div>
+          <div class="rc-footer">
+            <span class="rc-status">Status: Stable</span>
+            <a href="https://github.com/inha20/2SymmetricBooleanFunctionMinorThesis" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="repo-card">
+          <div>
+            <div class="rc-role">Empirical · Paper 3</div>
+            <h3 class="rc-title"><a href="https://inha20.github.io/3VariableRearrangementInvarianceMinorThesis/" target="_blank" rel="noopener">Rearrangement Invariance</a></h3>
+            <p class="rc-desc">Equivalence classes and symmetry preservation across input variable permutations.</p>
+          </div>
+          <div class="rc-footer">
+            <span class="rc-status">Status: Stable</span>
+            <a href="https://github.com/inha20/3VariableRearrangementInvarianceMinorThesis" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="repo-card">
+          <div>
+            <div class="rc-role">Theory · Paper 4</div>
+            <h3 class="rc-title"><a href="https://inha20.github.io/4StructureRecognitionTheory/" target="_blank" rel="noopener">Structure Recognition Theory</a></h3>
+            <p class="rc-desc">Meta-theoretical framework synthesizing Hypotheses H1–H10 on structure discovery and concept evolution.</p>
+          </div>
+          <div class="rc-footer">
+            <span class="rc-status">Status: Stable (v0.3)</span>
+            <a href="https://github.com/inha20/4StructureRecognitionTheory" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="repo-card">
+          <div>
+            <div class="rc-role">Methodology · Paper 5</div>
+            <h3 class="rc-title"><a href="https://inha20.github.io/5HumanAIResearchCollaboration/" target="_blank" rel="noopener">Human-AI Collaboration</a></h3>
+            <p class="rc-desc">HARCT framework, distributed research memory, AI handover, and multi-session continuity.</p>
+          </div>
+          <div class="rc-footer">
+            <span class="rc-status">Status: Complete (v1.2)</span>
+            <a href="https://github.com/inha20/5HumanAIResearchCollaboration" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="repo-card">
+          <div>
+            <div class="rc-role">Mathematics · Paper 6</div>
+            <h3 class="rc-title"><a href="https://inha20.github.io/6BooleanFunctionSpaceTheory/" target="_blank" rel="noopener">Boolean Function Space Theory</a></h3>
+            <p class="rc-desc">Complete S4 orbit classification of 65,536 Boolean functions and gate universality.</p>
+          </div>
+          <div class="rc-footer">
+            <span class="rc-status">Status: Active (Branch 8)</span>
+            <a href="https://github.com/inha20/6BooleanFunctionSpaceTheory" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concept Genealogy -->
+    <section class="section-wrap" id="genealogy">
+      <div class="section-header">
+        <span class="section-tag">Historical Progression</span>
+        <h2 class="section-title">Concept Genealogy</h2>
+        <p class="section-desc">
+          The sequence below records the actual developmental path of the research program — tracing discovery from intuition to formalization.
+        </p>
+      </div>
+
+      <div class="genealogy-timeline">
+        <div class="genealogy-node-item">
+          <div class="genealogy-circle"></div>
+          <div class="genealogy-title">1. Pattern (Karnaugh Map Checkerboard)</div>
+          <div class="genealogy-note">First empirical observation: Alternating visual checkerboard patterns for XOR/XNOR logic functions.</div>
+        </div>
+
+        <div class="genealogy-node-item">
+          <div class="genealogy-circle"></div>
+          <div class="genealogy-title">2. Layer Structure (Hamming Weights)</div>
+          <div class="genealogy-note">Discovery: Hamming-weight layers mathematically govern the locations of symmetric function patterns.</div>
+        </div>
+
+        <div class="genealogy-node-item">
+          <div class="genealogy-circle"></div>
+          <div class="genealogy-title">3. Equivalence & Structural Invariance</div>
+          <div class="genealogy-note">Observation: Variable rearrangements preserve invariant structural topologies across map re-orderings.</div>
+        </div>
+
+        <div class="genealogy-node-item">
+          <div class="genealogy-circle"></div>
+          <div class="genealogy-title">4. Structure Recognition Theory (SRT)</div>
+          <div class="genealogy-note">Meta-question: Why do certain structures trigger research inquiry while others remain unnoticed?</div>
+        </div>
+
+        <div class="genealogy-node-item">
+          <div class="genealogy-circle"></div>
+          <div class="genealogy-title">5. Human-AI Collaboration Model (HARCT)</div>
+          <div class="genealogy-note">Division of cognitive labor: Humans discover structure intuitively; AI systematically expands the explanation space.</div>
+        </div>
+
+        <div class="genealogy-node-item">
+          <div class="genealogy-circle"></div>
+          <div class="genealogy-title">6. Boolean Function Space Theory (Branch 8)</div>
+          <div class="genealogy-note">Current mathematical frontier: Gate-generated sub-spaces and Post's lattice as rigorous foundations.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Keywords -->
+    <section class="section-wrap" id="keywords" style="border-bottom: none;">
+      <div class="section-header">
+        <span class="section-tag">Core Terminology</span>
+        <h2 class="section-title">Keywords</h2>
+      </div>
+
+      <div class="keyword-cloud">
+        <span class="keyword-pill">Karnaugh map</span>
+        <span class="keyword-pill">Boolean function</span>
+        <span class="keyword-pill">structural invariance</span>
+        <span class="keyword-pill">structure recognition</span>
+        <span class="keyword-pill">symmetric Boolean function</span>
+        <span class="keyword-pill">variable rearrangement</span>
+        <span class="keyword-pill">Hamming weight</span>
+        <span class="keyword-pill">visual pattern analysis</span>
+        <span class="keyword-pill">human-AI collaboration</span>
+        <span class="keyword-pill">research question generation</span>
+        <span class="keyword-pill">Boolean function space</span>
+        <span class="keyword-pill">Post's lattice</span>
+        <span class="keyword-pill">gate universality</span>
+        <span class="keyword-pill">HARCT</span>
+        <span class="keyword-pill">research continuity</span>
+        <span class="keyword-pill">epistemology</span>
+        <span class="keyword-pill">AI in education</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Jonghun Choi (최종훈) · Independent Researcher · Graduate of Inha Technical College · Structure Recognition Research Program</p>
+      <div class="footer-links">
+        <a href="mailto:cjh3cjh@naver.com">cjh3cjh@naver.com</a>
+        <a href="https://github.com/inha20" target="_blank" rel="noopener">GitHub (@inha20)</a>
+        <a href="#hub-docs">Hub Docs</a>
+        <a href="SESSION_START.md">AI Entry Point</a>
+      </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- Program Overview -->
-  <section id="program">
-    <h2>Research Program</h2>
-    <p>
-      This page is the public entry point to a unified long-term research program
-      on <strong>Structure Recognition</strong> — investigating how humans discover
-      structure, assign meaning to it, and generate research questions.
-    </p>
-    <p>
-      The program began with specific Boolean function phenomena observed in
-      Karnaugh maps and has expanded toward a broader meta-theoretical framework,
-      with branches into human-AI collaboration and Boolean function space theory.
-    </p>
+  <script>
+    // Theme Switcher Logic
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlEl = document.documentElement;
 
-    <br>
-    <div class="arch-box">
-      <span class="layer-label">Empirical Foundation Layer</span><br>
-      &nbsp;&nbsp;Paper 1 — Karnaugh Map Structure Invariance<br>
-      &nbsp;&nbsp;Paper 2 — Symmetric Boolean Function Visual Patterns<br>
-      &nbsp;&nbsp;Paper 3 — Variable Rearrangement Invariance<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br>
-      <span class="layer-label">Theoretical Integration Layer</span><br>
-      &nbsp;&nbsp;Paper 4 — Structure Recognition Theory (SRT)<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br>
-      <span class="layer-label">Applied Research Layer</span><br>
-      &nbsp;&nbsp;Paper 5 — Human-AI Research Collaboration (HARCT)<br>
-      &nbsp;&nbsp;Paper 6 — Boolean Function Space Theory (NEW)<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br>
-      <span class="layer-label">Application Domains</span><br>
-      &nbsp;&nbsp;AI Collaboration Education &nbsp;·&nbsp; Structure-Based Mathematics
-    </div>
-  </section>
+    const moonPath = "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z";
+    const sunPath = "M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z";
 
-  <!-- Hub Docs -->
-  <section id="hub-docs">
-    <h2>Central Hub Documents</h2>
-    <p>
-      This repository (<code>inha20</code>) is the central hub of the research program.
-      Research documentation, theory summaries, and AI collaboration files are maintained here.
-    </p>
-    <p style="font-size:0.88rem;background:#fff3e0;border-left:3px solid #e65100;padding:0.6rem 1rem;border-radius:4px;margin-top:0.5rem;">
-      ⚠️ <strong>2026-06-21 구조 통합 (Session 33):</strong> 이전의 <code>program/</code>, <code>theory/</code>, <code>ai-workspace/</code> 하위 폴더 문서들이 아래 루트 파일들로 통합되었습니다.
-    </p>
-    <br>
-    <div class="hub-grid">
-
-      <div class="hub-card">
-        <span class="hub-folder tag-infra">AI 진입점</span>
-        <h3><a href="SESSION_START.md">SESSION_START.md</a></h3>
-        <ul>
-          <li>AI 단일 진입점 (v5.4) — 프로그램 전체 구조 &amp; AI 운영 원칙</li>
-          <li>Active Queue &amp; Repository Health 표 (작업 현황 통합)</li>
-          <li>Critical Workflow Rules &amp; Four-Paper Architecture (B)</li>
-          <li>Session History (Sessions 45–50+)</li>
-        </ul>
-      </div>
-
-      <div class="hub-card">
-        <span class="hub-folder tag-infra">이론 통합본</span>
-        <h3><a href="StructureRecognitionTheory_Unified.md">StructureRecognitionTheory_Unified.md</a></h3>
-        <ul>
-          <li>Formal Definitions 3.1–3.3 (Structure · Attention · Explanatory Significance)</li>
-          <li>H1–H10 Hypotheses — Research Generation + Concept Evolution</li>
-          <li>Q1–Q15 Question Hierarchy (Level 0–8), OP-01–OP-09</li>
-        </ul>
-        <p style="font-size:0.82rem;color:#6b7280;margin-top:0.6rem;">Full theory documents → <a href="https://inha20.github.io/4StructureRecognitionTheory/" target="_blank">4StructureRecognitionTheory</a></p>
-      </div>
-
-      <div class="hub-card">
-        <span class="hub-folder tag-infra">협업 제안서</span>
-        <h3><a href="HumanAICollaborationProposal_Outline.md">HumanAICollaborationProposal_Outline.md</a></h3>
-        <ul>
-          <li>Human-AI 협업 연구 제안서 개요</li>
-          <li>협업 모델 · 연구 질문 생성 구조 · 장기 프로그램 설계</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Repositories -->
-  <section id="repositories">
-    <h2>Repositories</h2>
-    <div class="repo-grid">
-
-      <div class="repo-card">
-        <span class="tag tag-empirical">Empirical · Paper 1</span>
-        <h3><a href="https://inha20.github.io/1KMapStructureInvariance/" target="_blank">KMap Structure Invariance</a></h3>
-        <p>Visual pattern analysis of 4-variable Karnaugh maps. XOR/XNOR checkerboard structures and structural regularity under Gray code arrangements. D₄ group theory and equivalence class theory applied to pattern classification.</p>
-        <p class="status">Status: Stable — submission ready</p>
-      </div>
-
-      <div class="repo-card">
-        <span class="tag tag-empirical">Empirical · Paper 2</span>
-        <h3><a href="https://inha20.github.io/2SymmetricBooleanFunctionMinorThesis/" target="_blank">Symmetric Boolean Functions</a></h3>
-        <p>Symmetric Boolean functions visualized through Hamming Weight layers. Ring structures and layer-based pattern interpretation of all 65,536 four-variable Boolean functions.</p>
-        <p class="status">Status: Stable</p>
-      </div>
-
-      <div class="repo-card">
-        <span class="tag tag-empirical">Empirical · Paper 3</span>
-        <h3><a href="https://inha20.github.io/3VariableRearrangementInvarianceMinorThesis/" target="_blank">Variable Rearrangement Invariance</a></h3>
-        <p>Structural invariance under variable rearrangement. Equivalence classes and symmetry preservation across different map arrangements.</p>
-        <p class="status">Status: Stable</p>
-      </div>
-
-      <div class="repo-card">
-        <span class="tag tag-theory">Theory · Paper 4</span>
-        <h3><a href="https://inha20.github.io/4StructureRecognitionTheory/" target="_blank">Structure Recognition Theory</a></h3>
-        <p>Meta-theoretical framework explaining why certain structures become research-worthy. Hypotheses H1–H10 on structure discovery, research generation, and concept evolution.</p>
-        <p class="status">Status: Stable</p>
-      </div>
-
-      <div class="repo-card">
-        <span class="tag tag-theory">Meta · Paper 5</span>
-        <h3><a href="https://inha20.github.io/5HumanAIResearchCollaboration/" target="_blank">Human-AI Research Collaboration</a></h3>
-        <p>Methods, observations, and case studies on long-term Human-AI research collaboration. HARCT framework, externalized memory, AI-to-AI handover, and multi-session context continuity.</p>
-        <p class="status">Status: Complete</p>
-      </div>
-
-      <div class="repo-card">
-        <span class="tag tag-new">New · Paper 6</span>
-        <h3><a href="https://inha20.github.io/6BooleanFunctionSpaceTheory/" target="_blank">Boolean Function Space Theory</a></h3>
-        <p>Complete S₄ orbit classification of 65,536 four-variable Boolean functions: Space(XOR) 10 orbits, Space(AND) 30 orbits, Space(NOT) 32 orbits. Unified paper (paper.md) complete. Connection to SRT established.</p>
-        <p class="status">Status: Phase 1·2·5 Complete — §6 personal narrative pending</p>
-      </div>
-
-      <div class="repo-card">
-        <span class="tag tag-infra">Program Hub</span>
-        <h3><a href="https://github.com/inha20/Research-Portfolio" target="_blank">Research Portfolio</a></h3>
-        <p>Archived program hub repository. Core content consolidated into this central hub (<code>inha20</code>).</p>
-        <p class="status">Status: Archived</p>
-      </div>
-
-      <div class="repo-card">
-        <span class="tag tag-ai">AI Workspace</span>
-        <h3><a href="https://inha20.github.io/ANTIGRAVITY/" target="_blank">ANTIGRAVITY</a></h3>
-        <p>AI collaboration workspace origin repository. Operational content consolidated into <a href="SESSION_START.md">SESSION_START.md</a> in this hub.</p>
-        <p class="status">Status: Archived</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Concept Genealogy -->
-  <section id="genealogy">
-    <h2>Concept Genealogy</h2>
-    <p>The sequence below records the <em>actual historical development</em> of the research program — not a logical reconstruction, but a trace of discovery:</p>
-    <br>
-    <div class="genealogy">
-
-      <div class="genealogy-step">
-        <div>
-          <span class="genealogy-label">Pattern</span><br>
-          <span class="genealogy-note">1st observation: Karnaugh map checkerboard patterns for XOR/XNOR functions</span>
-        </div>
-      </div>
-      <div class="genealogy-arrow">↓</div>
-
-      <div class="genealogy-step">
-        <div>
-          <span class="genealogy-label">Layer Structure</span><br>
-          <span class="genealogy-note">Discovery: Hamming Weight layers explain the positions of symmetric function patterns</span>
-        </div>
-      </div>
-      <div class="genealogy-arrow">↓</div>
-
-      <div class="genealogy-step">
-        <div>
-          <span class="genealogy-label">Equivalence</span><br>
-          <span class="genealogy-note">Observation: different variable arrangements can yield the same structural pattern</span>
-        </div>
-      </div>
-      <div class="genealogy-arrow">↓</div>
-
-      <div class="genealogy-step">
-        <div>
-          <span class="genealogy-label">Structural Invariance</span><br>
-          <span class="genealogy-note">Question: what exactly is preserved across variable rearrangements?</span>
-        </div>
-      </div>
-      <div class="genealogy-arrow">↓</div>
-
-      <div class="genealogy-step">
-        <div>
-          <span class="genealogy-label">Structure Recognition Theory</span><br>
-          <span class="genealogy-note">Meta-question: why do certain structures become research-worthy while others do not?</span>
-        </div>
-      </div>
-      <div class="genealogy-arrow">↓</div>
-
-      <div class="genealogy-step">
-        <div>
-          <span class="genealogy-label">Human-AI Collaboration Model</span><br>
-          <span class="genealogy-note">Observation: humans discover structure; AI expands the explanation space — division of cognitive labor</span>
-        </div>
-      </div>
-      <div class="genealogy-arrow">↓</div>
-
-      <div class="genealogy-step">
-        <div>
-          <span class="genealogy-label">Boolean Function Space Theory</span><br>
-          <span class="genealogy-note">New direction: gate-generated function spaces as the mathematical domain for structural classification</span>
-        </div>
-      </div>
-      <div class="genealogy-arrow">↓</div>
-
-      <div class="genealogy-step">
-        <div>
-          <span class="genealogy-label">Future Directions</span><br>
-          <span class="genealogy-note">AI Collaboration Education · Structure-Based Elementary Mathematics · Post Lattice × Karnaugh Map Geometry</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Keywords -->
-  <section id="keywords">
-    <h2>Keywords</h2>
-    <div class="keyword-list">
-      <span>Karnaugh map</span>
-      <span>Boolean function</span>
-      <span>structural invariance</span>
-      <span>structure recognition</span>
-      <span>symmetric Boolean function</span>
-      <span>variable rearrangement</span>
-      <span>Hamming weight</span>
-      <span>visual pattern analysis</span>
-      <span>human-AI collaboration</span>
-      <span>research question generation</span>
-      <span>XOR/XNOR patterns</span>
-      <span>Boolean function space</span>
-      <span>clone theory</span>
-      <span>gate universality</span>
-      <span>HARCT</span>
-      <span>research continuity</span>
-      <span>human cognition</span>
-      <span>AI education</span>
-    </div>
-  </section>
-
-</main>
-
-<!-- ── Footer ── -->
-<footer>
-  <p>Jonghun Choi (최종훈) · Independent researcher · Graduate of Inha Technical College · Structure Recognition Research Program</p>
-  <p style="margin-top:0.5rem">
-    <a href="mailto:cjh3cjh@naver.com">cjh3cjh@naver.com</a> &nbsp;·&nbsp;
-    <a href="https://github.com/inha20" target="_blank">GitHub</a> &nbsp;·&nbsp;
-    <a href="#hub-docs">Hub Docs</a> &nbsp;·&nbsp;
-    <a href="SESSION_START.md">AI Entry Point</a>
-  </p>
-</footer>
-
-<script>
-  // ── QR Popup Logic ──
-  const STORAGE_KEY = 'popup_dismiss_until';
-  const overlay = document.getElementById('popup-overlay');
-
-  function showPopup() {
-    overlay.classList.add('show');
-  }
-
-  function hidePopup() {
-    overlay.classList.remove('show');
-  }
-
-  function dismissFor(days) {
-    const until = Date.now() + days * 24 * 60 * 60 * 1000;
-    localStorage.setItem(STORAGE_KEY, String(until));
-    hidePopup();
-  }
-
-  // Show popup on load if not dismissed
-  (function checkPopup() {
-    const dismissUntil = localStorage.getItem(STORAGE_KEY);
-    if (!dismissUntil || Date.now() > Number(dismissUntil)) {
-      showPopup();
+    function setTheme(theme) {
+      htmlEl.setAttribute('data-theme', theme);
+      localStorage.setItem('sr_theme', theme);
+      if (theme === 'dark') {
+        themeIcon.innerHTML = `<path d="${sunPath}"></path>`;
+      } else {
+        themeIcon.innerHTML = `<path d="${moonPath}"></path>`;
+      }
     }
-  })();
 
-  // Button handlers
-  document.getElementById('popup-close').addEventListener('click', hidePopup);
-  document.getElementById('btn-dismiss-2d').addEventListener('click', function() { dismissFor(2); });
-  document.getElementById('btn-dismiss-30d').addEventListener('click', function() { dismissFor(30); });
+    const savedTheme = localStorage.getItem('sr_theme') || 
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    setTheme(savedTheme);
 
-  // ESC key close
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') hidePopup();
-  });
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlEl.getAttribute('data-theme');
+      setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
 
-  // Click outside to close (without saving)
-  overlay.addEventListener('click', function(e) {
-    if (e.target === overlay) hidePopup();
-  });
-</script>
+    // Visiting Card Modal Logic
+    const STORAGE_KEY = 'popup_dismiss_until';
+    const overlay = document.getElementById('popup-overlay');
+    const openCardBtn = document.getElementById('openCardBtn');
 
+    function showPopup() {
+      overlay.classList.add('show');
+    }
+
+    function hidePopup() {
+      overlay.classList.remove('show');
+    }
+
+    function dismissFor(days) {
+      const until = Date.now() + days * 24 * 60 * 60 * 1000;
+      localStorage.setItem(STORAGE_KEY, String(until));
+      hidePopup();
+    }
+
+    (function checkPopup() {
+      const dismissUntil = localStorage.getItem(STORAGE_KEY);
+      if (!dismissUntil || Date.now() > Number(dismissUntil)) {
+        showPopup();
+      }
+    })();
+
+    document.getElementById('popup-close').addEventListener('click', hidePopup);
+    document.getElementById('btn-dismiss-2d').addEventListener('click', () => dismissFor(2));
+    document.getElementById('btn-dismiss-30d').addEventListener('click', () => dismissFor(30));
+    openCardBtn.addEventListener('click', showPopup);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') hidePopup();
+    });
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) hidePopup();
+    });
+  </script>
 </body>
 </html>
