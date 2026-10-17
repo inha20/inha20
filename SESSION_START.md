@@ -22,7 +22,7 @@ Do **not** begin working on any repository without reading this document in full
 
 **새 세션 시작 시 이 순서로 읽고 진행하세요:**
 
-1. **이 파일** (`inha20-main/SESSION_START.md`) — 프로그램 전체 구조, AI 원칙, **현재 작업 현황** 모두 포함
+1. **이 파일** (`inha20/SESSION_START.md`) — 프로그램 전체 구조, AI 원칙, **현재 작업 현황** 모두 포함
 
 **연구자에게 첫 질문:** "Where did we leave off?"
 
@@ -46,8 +46,8 @@ Do **not** begin working on any repository without reading this document in full
     - `SubTODO.md` FR-3 셀션 갱신: 계산 결과 기록, 체크박스 ✅ 완료
   - **문서 일관성 복구 (3건):**
     - `SESSION_START.md` 버전 불일치 수정: 5.2(Session 47) → 5.4(Session 49) (이전 세션에서 누락된 버전 업데이트 수정 포함)
-    - `6BooleanFunctionSpaceTheory-main/SubTODO.md`: `SESSION_START.md Phase 5 체크 갱신` 체크박스가 미체크 상태였으나 Session 48에서 이미 완료된 사실 확인 원료 표시 정리
-    - `inha20-main/README.md`: 존재하지 않는 `ProjectDashboard.md`, `Research_History.md` 파일 참조 제거, SESSION_START.md 버전 v4.7 → v5.3 수정, `HumanAICollaborationProposal_Outline.md` 허브 링크 테이블에 추가
+    - `6BooleanFunctionSpaceTheory/SubTODO.md`: `SESSION_START.md Phase 5 체크 갱신` 체크박스가 미체크 상태였으나 Session 48에서 이미 완료된 사실 확인 원료 표시 정리
+    - `inha20/README.md`: 존재하지 않는 `ProjectDashboard.md`, `Research_History.md` 파일 참조 제거, SESSION_START.md 버전 v4.7 → v5.3 수정, `HumanAICollaborationProposal_Outline.md` 허브 링크 테이블에 추가
 
 #### 📝 Session 48 완료 기록 (2026-06-27)
 - **6BooleanFunctionSpaceTheory 이번 사이클 종결 및 통합 소논문 작성:**
@@ -243,13 +243,13 @@ Preserving this history is mandatory.
 ## 📂 Local Environment Context (다중 저장소 탐색 규칙)
 
 **⚠️ CRITICAL: Cross-Repository Navigation**
-이 로컬 환경(`C:\Users\cjh3c\OneDrive\바탕 화면\Github\`)에는 여러 개의 저장소가 병렬(sibling) 구조로 배치되어 있으며, 모든 디렉토리 이름에는 `-main`이 붙어 있습니다.
-현재 `inha20-main` 내부에서 작업을 수행하더라도, 다른 저장소의 상태를 확인해야 할 때는 **반드시 상위 디렉토리로 이동하여 `-main` 접미사가 붙은 폴더를 탐색**해야 합니다.
+이 로컬 환경(`C:\Users\cjh3c\OneDrive\바탕 화면\Github\`)에는 여러 개의 저장소가 병렬(sibling) 구조로 배치되어 있으며, **각 폴더 이름은 GitHub 저장소 이름과 같습니다** (예: `6BooleanFunctionSpaceTheory` 폴더 = `inha20/6BooleanFunctionSpaceTheory` 저장소). 2026-10-10 이전에는 zip 다운로드 이름인 `-main` 접미사가 붙어 있었으나 제거되었습니다.
+현재 `inha20` 내부에서 작업을 수행하더라도, 다른 저장소의 상태를 확인해야 할 때는 **반드시 상위 디렉토리로 이동하여 저장소 이름과 같은 폴더를 탐색**해야 합니다.
 
-- **예시 1:** `6BooleanFunctionSpaceTheory` 탐색 필요 시 → `../6BooleanFunctionSpaceTheory-main` 경로 확인.
-- **예시 2:** `4StructureRecognitionTheory` 탐색 필요 시 → `../4StructureRecognitionTheory-main` 경로 확인.
+- **예시 1:** `6BooleanFunctionSpaceTheory` 탐색 필요 시 → `../6BooleanFunctionSpaceTheory` 경로 확인.
+- **예시 2:** `4StructureRecognitionTheory` 탐색 필요 시 → `../4StructureRecognitionTheory` 경로 확인.
 
-"해당 폴더가 없다"고 판단하기 전에 반드시 `../[저장소명]-main` 경로가 존재하는지 확인(list_dir 등)하십시오.
+"해당 폴더가 없다"고 판단하기 전에 반드시 `../[저장소명]` 경로가 존재하는지 확인(list_dir 등)하십시오. 이전 이름(`../[저장소명]-main`)을 안내하는 오래된 문서가 있으면 `-main`을 뺀 이름으로 읽으십시오.
 
 ---
 
