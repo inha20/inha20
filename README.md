@@ -70,7 +70,7 @@ This work also explores **knowledge transfer**, **context management**, and **AI
 
 | Repository | Role | Status |
 |---|---|---|
-| [5HumanAIResearchCollaboration](https://inha20.github.io/5HumanAIResearchCollaboration/) | Long-term Human-AI research collaboration; externalized memory; AI-to-AI handover | Complete |
+| [5HumanAIResearchCollaboration](https://inha20.github.io/5HumanAIResearchCollaboration/) | Long-term Human-AI research collaboration; externalized memory; AI-to-AI handover | Archived |
 | [ANTIGRAVITY](https://inha20.github.io/ANTIGRAVITY/) | AI collaboration workspace; session continuity; handover documents | Monitoring |
 
 ---
@@ -93,7 +93,7 @@ Exploratory. How should collaboration with AI be taught? What skills distinguish
 Exploratory. Reinterpreting elementary mathematics through pattern, structure, and meaning.
 
 **Boolean Function Space Theory (Branch 8)**  
-Active. Exploring how Boolean function spaces emerge from primitive operators and how these spaces can be recognized, classified, and transformed — extending the research program into applied mathematics via Karnaugh map geometry. Repository: [6BooleanFunctionSpaceTheory](https://inha20.github.io/6BooleanFunctionSpaceTheory/)
+Archived (early research notes, superseded by Paper 7). Exploring how Boolean function spaces emerge from primitive operators and how these spaces can be recognized, classified, and transformed — extending the research program into applied mathematics via Karnaugh map geometry. Repository: [6BooleanFunctionSpaceTheory](https://inha20.github.io/6BooleanFunctionSpaceTheory/)
 
 ---
 
@@ -138,7 +138,7 @@ Difference → Attention → Structure → Meaning → Research Worthiness → Q
 
 ## Current Status (Summer 2026)
 
-Active work: Boolean Function Space Theory (Repo 6) 본격 착수 · Structure Recognition Theory development
+Current work: the standalone Papers 7 (group-theoretic classification) and 8 (structural thinking and human-AI research collaboration). Papers 1–6 are archived early research notes.
 
 Central hub: this repository (`inha20`)
 

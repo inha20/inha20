@@ -87,12 +87,14 @@ Do **not** begin working on any repository without reading this document in full
 
 | Repository | Health | Phase | Immediate Next Action |
 |---|---|---|---|
-| 1KMapStructureInvariance | 🟡 Stable | Phase 1 | ✅ 완료 |
-| 2SymmetricBooleanFunctionMinorThesis | 🟡 Stable | Phase 1 | ✅ 완료 |
-| 3VariableRearrangementInvarianceMinorThesis | 🟡 Stable | Phase 3 | ✅ 완료 |
-| 4StructureRecognitionTheory | 🟡 Stable | Phase 4 | ✅ 완료 |
-| **5HumanAIResearchCollaboration** | 🟢 Complete | Phase 4 | GitHub Pages 배포 완료 |
-| **6BooleanFunctionSpaceTheory** | 🟢 Active | Phase 1·2·5 | **현재 연구 진행 중.** 잔여: §6 개인 서술 보완 (연구자 직접) |
+| 1KMapStructureInvariance | ⚪ Archived | Phase 1 | 읽기 전용(2026-10-18). 7·8번 논문으로 정리·정정됨 |
+| 2SymmetricBooleanFunctionMinorThesis | ⚪ Archived | Phase 1 | 읽기 전용(2026-10-18). 7·8번 논문으로 정리·정정됨 |
+| 3VariableRearrangementInvarianceMinorThesis | ⚪ Archived | Phase 3 | 읽기 전용(2026-10-18). 7·8번 논문으로 정리·정정됨 |
+| 4StructureRecognitionTheory | ⚪ Archived | Phase 4 | 읽기 전용(2026-10-18). 이론은 8번 논문으로 정리됨 |
+| 5HumanAIResearchCollaboration | ⚪ Archived | Phase 4 | 읽기 전용(2026-10-18). 이론은 8번 논문으로 정리됨 |
+| 6BooleanFunctionSpaceTheory | ⚪ Archived | Phase 1·2·5 | 읽기 전용(2026-10-18). 내용은 7번 논문으로 정리·정정됨 |
+| 7GroupTheoryBooleanUnification | 🟢 Current | Standalone (Track A) | 수학 논문. 정의·증명 보완, `paper/01_…pdf` 제공, All rights reserved (`LICENSE`) |
+| 8StructuralThinkingInAIEra | 🟢 Current | Standalone (Track B) | 이론 제안 논문(SRT, HARCT)과 n=1 사례. `paper/01_…pdf`, `images/`, All rights reserved (`LICENSE`) |
 | ANTIGRAVITY | 🔵 Monitoring | All | README.md 단일 운영 |
 | inha20 | 🔵 Monitoring | Phase 1-5 | 통합 대시보드 체제 가동 |
 
