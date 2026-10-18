@@ -5,6 +5,8 @@
 **작성일:** 2026-06-22
 **작성:** AI 협업자 (Claude) — ProjectDashboard.md Task A-8 수행 결과
 **상태:** 탐색적 초안 — 연구자 검토 및 선택 대기 (AI는 프레임워크를 제안하며, 채택 여부는 연구자가 결정합니다)
+
+> **2026-10-18 주:** 이 초안이 쓰인 뒤 `ProjectDashboard.md`와 `Research_History.md`는 `SESSION_START.md`로 통합되어 더 이상 별도 파일이 아닙니다(Active Queue, Session History 절 참조). 아래 방법과 자료 목록에 나오는 두 파일 이름은 작성 당시의 이름입니다.
 **관련 문서:** `StructureRecognitionTheory_Unified.md` (H1–H10, OP-01–09), `5HumanAIResearchCollaboration` 저장소 (HARCT 4-Component, P1–P8)
 
 ---
