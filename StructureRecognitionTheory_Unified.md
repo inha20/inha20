@@ -66,7 +66,7 @@ These hypotheses describe the process from a single encounter with a phenomenon 
 | # | Name | Claim | Status |
 |---|---|---|---|
 | **H1** | Structure Discoverer | Humans may have a comparative advantage in structure discovery over AI | Exploratory |
-| **H2** | Representation Transformation | Some problems become tractable by changing representation, not reducing computation | Supported by multiple case observations |
+| **H2** | Representation Transformation | Some problems become tractable by changing representation, not reducing computation | Exploratory — consistent with a few anecdotal observations (one domain: Karnaugh maps); systematic testing needed |
 | **H3** | Attention Filter | Humans do not investigate every pattern; a prior selection process occurs. Criteria operate implicitly | Exploratory |
 | **H4** | Significance Filter | Beyond attention, humans apply an implicit filter evaluating whether a structure is *worth investigating*. Criteria: compression, prediction, generalization, explanation pull | Exploratory — criteria operationalized |
 | **H5** | Explanation Anticipation | Humans anticipate the existence of an explanation *before* they discover it | Exploratory — empirical design proposed |

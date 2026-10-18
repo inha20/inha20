@@ -1,8 +1,8 @@
 # SESSION_START — 세션 시작 진입점
 ## Structure Recognition Research Program
 
-**Version:** 5.4 (Session 49 갱신)
-**Date:** 2026-06-27  
+**Version:** 5.4 (마지막 번호 세션: Session 49, 2026-06-27 — 이후 갱신은 세션 번호·버전 번호 없음)
+**Date:** 2026-10-19 (Repository Health 표 2026-10-18 갱신 · 구조/우선순위 문구 2026-10-19 갱신)  
 **Author:** Choi Jonghun (Independent researcher; graduate of Inha Technical College)  
 **Maintained by:** Research-Portfolio / ANTIGRAVITY
 
@@ -35,6 +35,14 @@ Do **not** begin working on any repository without reading this document in full
 *(현재 대기 중인 작업 없음)*
 
 > **Work-Then-Record Protocol:** 작업 완료 → 파일 re-read → 이 섹션 갱신
+
+> **이 섹션의 기록 범위:** 아래에는 **Session 45–49의 완료 기록(2026-06)** 과 번호 없는 **2026-10 갱신 기록**만 있습니다. 2026-06-27 이후의 번호 세션 기록은 이 문서에 없습니다.
+
+#### 📝 2026-10 갱신 기록 (세션 번호 없음)
+- **2026-10-18 — 7·8번 독립 논문 체제로 정리:**
+  - 1~6번 저장소를 읽기 전용(archived)으로 전환하고, 현재 논문은 독립 논문 `7KarnaughGroupClassification`(수학 논문)과 `8StructuralThinkingAndHumanAICollaboration`(이론 제안 논문)으로 정리 (아래 Repository Health 표).
+  - 저장소 이름 변경: `7GroupTheoryBooleanUnification` → `7KarnaughGroupClassification`, `8StructuralThinkingInAIEra` → `8StructuralThinkingAndHumanAICollaboration`. 이 저장소의 링크·라벨도 새 이름으로 갱신.
+- **2026-10-19 — 이 문서의 현행화:** 헤더 날짜, Repository Health 표(Research-Portfolio 행 추가, inha20 행 문구 정정), 연구 우선순위, 프로그램 구조 절을 1~6번 보관 / 7·8번 현재 구조로 맞춤. 2026-06의 세션 기록(Session 45–49)은 그대로 둠.
 
 #### 📝 Session 49 완료 기록 (2026-06-27)
 - **FR-3 n=5 군론 계산 완료 및 문서 일관성 복구:**
@@ -95,8 +103,11 @@ Do **not** begin working on any repository without reading this document in full
 | 6BooleanFunctionSpaceTheory | ⚪ Archived | Phase 1·2·5 | 읽기 전용(2026-10-18). 내용은 7번 논문으로 정리·정정됨 |
 | 7KarnaughGroupClassification | 🟢 Current | Standalone (Track A) | 수학 논문. 정의·증명 보완, `paper/01_…pdf` 제공, All rights reserved (`LICENSE`) |
 | 8StructuralThinkingAndHumanAICollaboration | 🟢 Current | Standalone (Track B) | 이론 제안 논문(SRT, HARCT)과 n=1 사례. `paper/01_…pdf`, `images/`, All rights reserved (`LICENSE`) |
+| Research-Portfolio | 🔵 Monitoring | Phase 1–3 | 프로그램 허브(README·index.html). 7·8번 논문 기준으로 정리(2026-10-18) |
 | ANTIGRAVITY | 🔵 Monitoring | All | README.md 단일 운영 |
-| inha20 | 🔵 Monitoring | Phase 1-5 | 통합 대시보드 체제 가동 |
+| inha20 | 🔵 Monitoring | Phase 1-5 | 프로필 저장소(README·index.html·이 문서·이론 통합본). 7·8번 논문 기준으로 정리(2026-10-18~19) |
+
+*상태 표기: ⚪ Archived = 읽기 전용 보관 · 🟢 Current = 현재 논문 · 🔵 Monitoring = 지원·유지 저장소. 11개 저장소(Papers 1–8, Research-Portfolio, ANTIGRAVITY, inha20) 전체를 수록합니다.*
 
 ---
 
@@ -141,8 +152,9 @@ A recurring pattern has emerged (treat as working hypothesis, not conclusion):
 - Forcing theoretical frameworks too early onto early observations
 
 ### Research Priority
-**Highest priority:** Structure Recognition Theory (Paper 4)  
-**Reason:** It may become the conceptual framework connecting all previous repositories.
+**Current priority (2026-10):** Paper 7 (`7KarnaughGroupClassification`) and Paper 8 (`8StructuralThinkingAndHumanAICollaboration`) — 두 독립 논문의 다듬기  
+**Reason:** Papers 1–6은 보관된(Archived, 읽기 전용) 이전 연구 노트이며, 그 내용은 7번(수학)과 8번(SRT·HARCT 이론 제안과 n=1 사례) 논문으로 정리되었다.  
+**Earlier priority (until the 2026-10 update, 역사 기록):** Structure Recognition Theory (Paper 4) — "It may become the conceptual framework connecting all previous repositories."  
 **When uncertain between:** A) Producing more content B) Improving conceptual organization **→ Prefer B.**
 
 ---
@@ -175,7 +187,9 @@ A recurring pattern has emerged (treat as working hypothesis, not conclusion):
 
 ---
 
-## 🏗 The Four-Paper Architecture (Architecture B)
+## 🏗 Program Architecture (Architecture B)
+
+> **2026-10 현재:** Papers 1–6은 보관된(Archived, 읽기 전용) 이전 연구 노트이고, 현재 논문은 독립 논문 Paper 7·8이다. 프로그램은 11개 저장소(Papers 1–8, Research-Portfolio, ANTIGRAVITY, inha20)로 구성된다. 아래 다이어그램은 Architecture B의 Papers 1–5 구조(2026-06 기준, 역사 기록)이다.
 
 ```
 Paper 1: KMap Structure Invariance
@@ -191,13 +205,15 @@ Paper 5: Human-AI Research Collaboration
     (방법론적 연구 — 위 전체 연구를 가능하게 한 과정 연구)
 ```
 
-Papers 1–3 = **Empirical foundation layer**  
-Paper 4 = **Meta-theoretical integration layer**  
-Paper 5 = **Methodological self-referential layer**  
+Papers 1–3 = **Empirical foundation layer** *(Archived)*  
+Paper 4 = **Meta-theoretical integration layer** *(Archived; 이론은 Paper 8로 정리됨)*  
+Paper 5 = **Methodological self-referential layer** *(Archived; 이론은 Paper 8로 정리됨)*  
+6BooleanFunctionSpaceTheory (Paper 6) = **Applied Mathematics Extension** *(Archived; 2026-06-12 신규 저장소 — 당시 9번째; 당시 라벨 "Branch 8"은 더 이상 쓰지 않음; 내용은 Paper 7로 정리됨)*  
+7KarnaughGroupClassification (Paper 7) = **Standalone mathematics paper (Track A)** *(Current)*  
+8StructuralThinkingAndHumanAICollaboration (Paper 8) = **Standalone theory-proposal paper (Track B)** *(Current)*  
 Research-Portfolio = **Program navigation hub**  
 ANTIGRAVITY = **AI collaboration workspace**  
-inha20 = **GitHub public entry point**  
-6BooleanFunctionSpaceTheory = **Applied Mathematics Extension — Branch 8** *(2026-06-12 신규 저장소 — 9번째)*
+inha20 = **GitHub public entry point**
 
 ---
 
@@ -218,7 +234,8 @@ Human-AI Collaboration Model
 ```
 
 This genealogy represents the **actual historical development** of the researcher's thinking.  
-Preserving this history is mandatory.
+Preserving this history is mandatory.  
+*(2026-10: 이 흐름은 Papers 1–6(보관됨)에 이른 역사적 전개의 기록이다. 현재 논문은 독립 논문 Paper 7·8이다.)*
 
 ---
 
@@ -270,4 +287,4 @@ Preserving this history is mandatory.
 
 ---
 
-*Last Updated: 2026-06-27 (Session 49 — FR-3 n=5 계산 완료, 문서 일관성 복구)*
+*Last Updated: 2026-10-19 (Repository Health 표 2026-10-18 갱신 포함; 구조·우선순위·헤더 현행화). 마지막 번호 세션: Session 49 (2026-06-27 — FR-3 n=5 계산 완료, 문서 일관성 복구)*
