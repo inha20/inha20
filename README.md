@@ -31,21 +31,25 @@ The program follows a connected sequence from empirical observation to theoretic
 | 8 | [Structural Thinking and Human-AI Collaboration](https://inha20.github.io/8StructuralThinkingAndHumanAICollaboration/) · [GitHub](https://github.com/inha20/8StructuralThinkingAndHumanAICollaboration) | Framework proposal (SRT, HARCT), single-case study, and educational implications | Current |
 
 ```
-Empirical Foundation Layer
+Layer 1 · Empirical Foundation
   Paper 1 — Karnaugh Map Structure Invariance
   Paper 2 — Symmetric Boolean Function Visual Patterns
   Paper 3 — Variable Rearrangement Invariance
            ↓
-Theoretical Integration Layer
+Layer 2 · Theoretical Integration
   Paper 4 — Structure Recognition Theory (SRT)
            ↓
-Application Domains
-  Human-AI Collaboration  ·  AI Education  ·  Structure-Based Mathematics
+Layer 3 · Methodological Meta-Layer
+  Paper 5 — Human-AI Research Collaboration (HARCT)
+           ↓
+Layer 4 · Mathematical Extension
   Paper 6 — Boolean Function Space Theory (archived early exploration)
            ↓
-Current Standalone Papers
+Synthesis · Standalone Papers
   Paper 7 — Group-Theoretic Classification of 4-Variable Boolean Function Spaces
   Paper 8 — Structural Thinking and Human-AI Research Collaboration
+
+Exploratory threads without a paper yet: AI Collaboration Education · Structure-Based Mathematics
 ```
 
 Papers 1–6 are archived, read-only research notes; Papers 7 and 8 are the current papers.
