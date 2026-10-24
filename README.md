@@ -1,6 +1,6 @@
 # Jonghun Choi (최종훈)
 
-**Independent researcher · Graduate of Inha Technical College**  
+**Independent researcher · 2nd-year student at Inha Technical College**  
 Researching how humans discover structure, assign meaning, and generate research questions.
 
 ---

@@ -3,7 +3,7 @@
 
 **Version:** 5.4 (마지막 번호 세션: Session 49, 2026-06-27 — 이후 갱신은 세션 번호·버전 번호 없음)
 **Date:** 2026-10-19 (Repository Health 표 2026-10-18 갱신 · 구조/우선순위 문구 2026-10-19 갱신)  
-**Author:** Choi Jonghun (Independent researcher; graduate of Inha Technical College)  
+**Author:** Choi Jonghun (Independent researcher; 2nd-year student at Inha Technical College)  
 **Maintained by:** Research-Portfolio / ANTIGRAVITY
 
 > 📌 **AI 진입점 통합 안내 (v5.0):** `ai-workspace/OperatingPrinciples.md`, `AIHandoverInstructions.md`의 핵심 원칙과 작업 현황(Active Queue, Health 표)이 이 단일 문서로 완전히 통합되었습니다. AI 세션 시작 시 **오직 이 문서 하나만** 읽고 작업을 시작하세요.
@@ -43,6 +43,7 @@ Do **not** begin working on any repository without reading this document in full
   - 1~6번 저장소를 읽기 전용(archived)으로 전환하고, 현재 논문은 독립 논문 `7KarnaughGroupClassification`(수학 논문)과 `8StructuralThinkingAndHumanAICollaboration`(이론 제안 논문)으로 정리 (아래 Repository Health 표).
   - 저장소 이름 변경: `7GroupTheoryBooleanUnification` → `7KarnaughGroupClassification`, `8StructuralThinkingInAIEra` → `8StructuralThinkingAndHumanAICollaboration`. 이 저장소의 링크·라벨도 새 이름으로 갱신.
 - **2026-10-19 — 이 문서의 현행화:** 헤더 날짜, Repository Health 표(Research-Portfolio 행 추가, inha20 행 문구 정정), 연구 우선순위, 프로그램 구조 절을 1~6번 보관 / 7·8번 현재 구조로 맞춤. 2026-06의 세션 기록(Session 45–49)은 그대로 둠.
+- **2026-10-24 — 소속 표기 정정(졸업 → 재학):** 사용자 확인 사실(인하공업전문대학 2학년 재학생)에 따라 이 저장소의 `index.html`(명함 팝업·히어로·소개·푸터·메타 설명), `README.md`, 이 문서의 저자 표기를 `Graduate of Inha Technical College` / `인하공업전문대학 졸업`에서 `2nd-year student at Inha Technical College` / `인하공업전문대학 2학년 재학`으로 수정. Session 47(2026-06-27)의 `출신` 정정 기록은 당시 기록이므로 그대로 둠. 다른 저장소(Papers 1–8, Research-Portfolio, ANTIGRAVITY)의 동일 표기는 이 저장소 범위 밖이라 미반영.
 
 #### 📝 Session 49 완료 기록 (2026-06-27)
 - **FR-3 n=5 군론 계산 완료 및 문서 일관성 복구:**
