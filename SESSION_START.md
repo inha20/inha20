@@ -2,7 +2,7 @@
 ## Structure Recognition Research Program
 
 **Version:** 5.4 (마지막 번호 세션: Session 49, 2026-06-27 — 이후 갱신은 세션 번호·버전 번호 없음)
-**Date:** 2026-10-19 (Repository Health 표 2026-10-18 갱신 · 구조/우선순위 문구 2026-10-19 갱신)  
+**Date:** 2026-11-13 (허브 단일화 반영 · Repository Health 표 일부 2026-11-13 갱신 · 구조/우선순위 문구 2026-10-19 갱신)  
 **Author:** Choi Jonghun (Independent researcher; 2nd-year student at Inha Technical College)  
 **Maintained by:** Research-Portfolio / ANTIGRAVITY
 
@@ -36,15 +36,21 @@ Do **not** begin working on any repository without reading this document in full
 
 > **Work-Then-Record Protocol:** 작업 완료 → 파일 re-read → 이 섹션 갱신
 
-> **이 섹션의 기록 범위:** 아래에는 **Session 45–49의 완료 기록(2026-06)** 과 번호 없는 **2026-10 갱신 기록**만 있습니다. 2026-06-27 이후의 번호 세션 기록은 이 문서에 없습니다.
+> **이 섹션의 기록 범위:** 아래에는 **Session 45–49의 완료 기록(2026-06)** 과 번호 없는 **2026-10·11 갱신 기록**만 있습니다. 2026-06-27 이후의 번호 세션 기록은 이 문서에 없습니다.
 
-#### 📝 2026-10 갱신 기록 (세션 번호 없음)
+#### 📝 2026-10·11 갱신 기록 (세션 번호 없음)
 - **2026-10-18 — 7·8번 독립 논문 체제로 정리:**
   - 1~6번 저장소를 읽기 전용(archived)으로 전환하고, 현재 논문은 독립 논문 `7KarnaughGroupClassification`(수학 논문)과 `8StructuralThinkingAndHumanAICollaboration`(이론 제안 논문)으로 정리 (아래 Repository Health 표).
   - 저장소 이름 변경: `7GroupTheoryBooleanUnification` → `7KarnaughGroupClassification`, `8StructuralThinkingInAIEra` → `8StructuralThinkingAndHumanAICollaboration`. 이 저장소의 링크·라벨도 새 이름으로 갱신.
 - **2026-10-19 — 이 문서의 현행화:** 헤더 날짜, Repository Health 표(Research-Portfolio 행 추가, inha20 행 문구 정정), 연구 우선순위, 프로그램 구조 절을 1~6번 보관 / 7·8번 현재 구조로 맞춤. 2026-06의 세션 기록(Session 45–49)은 그대로 둠.
 - **2026-10-24 — 소속 표기 정정(졸업 → 재학):** 사용자 확인 사실(인하공업전문대학 2학년 재학생)에 따라 이 저장소의 `index.html`(명함 팝업·히어로·소개·푸터·메타 설명), `README.md`, 이 문서의 저자 표기를 `Graduate of Inha Technical College` / `인하공업전문대학 졸업`에서 `2nd-year student at Inha Technical College` / `인하공업전문대학 2학년 재학`으로 수정. Session 47(2026-06-27)의 `출신` 정정 기록은 당시 기록이므로 그대로 둠. 다른 저장소(Papers 1–8, Research-Portfolio, ANTIGRAVITY)의 동일 표기는 이 저장소 범위 밖이라 미반영.
 - **2026-11-13 — 이미지 생성 규칙 삭제:** 연구자(소유자) 요청에 따라 `Critical Workflow Rules`의 3번 `Image Creation Rule`(이미지는 사람이 만든 스타일로 통일, AI 이미지 도구·AI가 작성한 그림 코드 금지)을 삭제함. 이후 이미지 파일의 제작 방식에는 이 문서가 별도 제한을 두지 않음. Session 46 기록 등 과거 기록은 당시 기록이므로 그대로 두고, 다른 저장소의 문서에 따로 적힌 제작 지침은 그 저장소 범위라 이 변경에 포함하지 않음.
+- **2026-11-13 — 허브 단일화:** 연구자 결정에 따라 `Research-Portfolio`를 프로그램의 **단일 정식 허브**(https://inha20.github.io/Research-Portfolio/)로 삼음. 새 `inha20.github.io` 사용자 사이트 저장소는 만들지 않음.
+  - `Research-Portfolio`: `index.html`·`404.html`을 `program.toml`에서 `build.py`로 생성하는 방식으로 다시 만듦. 홈은 영어이고 논문 카드에 KO/EN 배지(해당 페이지의 언어)를 표시하며, 현재 논문 7·8을 먼저 보여 줌. 8번 논문은 홈에 노출, 9번은 `show = false`로 숨김. 기존의 긴 README는 짧은 소개와 관리 메모로 줄임(이전 내용은 git 기록에 있음).
+  - `inha20`(이 저장소): `index.html`은 새 허브로 넘기는 리다이렉트로 교체함. 옛 섹션 이름(`#program`, `#hub-docs`, `#repositories`, `#keywords`)은 허브가 새 위치로 이어 줌. `README.md`는 짧은 프로필 카드로 줄임(이전 긴 README는 git 기록에 있음). 이 문서의 Program Architecture·Key Files·Repository Health를 이에 맞춰 고침.
+  - **주소 동결(바꾸지 않음):** 허브 주소, 1~8번 논문 저장소 이름과 Pages 주소, ANTIGRAVITY Pages 주소. 8번 논문은 홈에 노출하되 저장소의 이름·구조는 그대로 둠.
+  - **9번(`9NPNStabilizerTypes`):** 7번 논문의 후속 작업 폴더이고 연구자 검토 전이며 Pages가 없음. 허브에서는 `program.toml`의 `show = false`로 숨겨 둠. 노출하려면 연구자 확인 후 `show = true`.
+  - **미결(열린 질문):** 두 README의 "연구 생성 흐름" 문구가 서로 달랐음(`inha20`: Difference → Attention → Structure → Meaning → Research Worthiness → Question → Research / `Research-Portfolio`: Pattern → Attention → Structure → Meaning → Question → Research). 어느 쪽이 정식인지 연구자 확인 전이라 새 README와 허브에는 싣지 않음.
 
 #### 📝 Session 49 완료 기록 (2026-06-27)
 - **FR-3 n=5 군론 계산 완료 및 문서 일관성 복구:**
@@ -105,9 +111,9 @@ Do **not** begin working on any repository without reading this document in full
 | 6BooleanFunctionSpaceTheory | ⚪ Archived | Phase 1·2·5 | 읽기 전용(2026-10-18). 내용은 7번 논문으로 정리·정정됨 |
 | 7KarnaughGroupClassification | 🟢 Current | Standalone (Track A) | 수학 논문. 정의·증명 보완, `paper/01_…pdf` 제공, All rights reserved (`LICENSE`) |
 | 8StructuralThinkingAndHumanAICollaboration | 🟢 Current | Standalone (Track B) | 이론 제안 논문(SRT, HARCT)과 n=1 사례. `paper/01_…pdf`, `images/`, All rights reserved (`LICENSE`) |
-| Research-Portfolio | 🔵 Monitoring | Phase 1–3 | 프로그램 허브(README·index.html). 7·8번 논문 기준으로 정리(2026-10-18) |
+| Research-Portfolio | 🔵 Monitoring | Phase 1–3 | **단일 정식 허브.** `index.html`·`404.html`은 `program.toml`에서 `build.py`로 생성(2026-11-13). 7·8번 논문 기준으로 정리(2026-10-18) |
 | ANTIGRAVITY | 🔵 Monitoring | All | README.md 단일 운영 |
-| inha20 | 🔵 Monitoring | Phase 1-5 | 프로필 저장소(README·index.html·이 문서·이론 통합본). 7·8번 논문 기준으로 정리(2026-10-18~19) |
+| inha20 | 🔵 Monitoring | Phase 1-5 | 프로필 저장소(짧은 README 카드·새 허브로 넘기는 `index.html`·이 문서·이론 통합본). 7·8번 논문 기준 정리(2026-10-18~19), 허브 단일화로 README·index.html 개편(2026-11-13) |
 
 *상태 표기: ⚪ Archived = 읽기 전용 보관 · 🟢 Current = 현재 논문 · 🔵 Monitoring = 지원·유지 저장소. 11개 저장소(Papers 1–8, Research-Portfolio, ANTIGRAVITY, inha20) 전체를 수록합니다.*
 
@@ -206,9 +212,17 @@ Paper 5 = **Methodological self-referential layer** *(Archived; 이론은 Paper 
 6BooleanFunctionSpaceTheory (Paper 6) = **Applied Mathematics Extension** *(Archived; 2026-06-12 신규 저장소 — 당시 9번째; 당시 라벨 "Branch 8"은 더 이상 쓰지 않음; 내용은 Paper 7로 정리됨)*  
 7KarnaughGroupClassification (Paper 7) = **Standalone mathematics paper (Track A)** *(Current)*  
 8StructuralThinkingAndHumanAICollaboration (Paper 8) = **Standalone theory-proposal paper (Track B)** *(Current)*  
-Research-Portfolio = **Program navigation hub**  
+Research-Portfolio = **Canonical program hub** *(2026-11-13부터 단일 정식 허브 — 아래 "허브 운영 규칙")*  
 ANTIGRAVITY = **AI collaboration workspace**  
-inha20 = **GitHub public entry point**
+inha20 = **GitHub public entry point** *(프로필 README + 이 문서. 옛 허브 주소 `inha20.github.io/inha20/`는 새 허브로 리다이렉트)*
+
+### 허브 운영 규칙 (2026-11-13~)
+
+- **정식 허브:** `Research-Portfolio` → https://inha20.github.io/Research-Portfolio/ (연구자 결정. 새 `inha20.github.io` 저장소는 만들지 않음).
+- **내용의 단일 출처:** `Research-Portfolio/program.toml`. `python build.py`(Python 3.11 이상, 표준 라이브러리만)로 `index.html`·`404.html`을 생성하고 `program.toml`과 함께 커밋함. `index.html`을 직접 고치지 않음(다음 빌드에서 덮어써짐). 수정 순서와 옵션은 그 저장소 `README.md`의 관리 메모에 있음.
+- **주소 동결:** 허브 주소, 1~8번 논문 저장소 이름과 Pages 주소, ANTIGRAVITY Pages 주소는 바꾸지 않음. 8번 논문은 홈에 노출하되 저장소의 이름·구조는 건드리지 않음.
+- **숨김:** 9번(`9NPNStabilizerTypes`)은 연구자 검토 전이라 `show = false`. 노출은 연구자 확인 후.
+- **표기:** 허브 홈은 영어. 논문 카드의 KO/EN 배지는 해당 페이지가 쓰인 언어. 소속은 `2nd-year student at Inha Technical College` / `인하공업전문대학 2학년 재학`.
 
 ---
 
@@ -271,6 +285,8 @@ Preserving this history is mandatory.
 
 ### Program-Level Documents
 - `SESSION_START.md` ← **This file** (AI 단일 진입점 · 작업 현황 포함)
+- [program.toml](https://github.com/inha20/Research-Portfolio/blob/main/program.toml) ← **허브 내용의 단일 출처** *(별도 저장소: Research-Portfolio)*
+- [Research-Portfolio/README.md](https://github.com/inha20/Research-Portfolio/blob/main/README.md) ← 허브 관리 메모(수정 순서, 옵션) *(별도 저장소)*
 
 (위 파일은 이 저장소(`inha20`) 루트에 위치 — 경로 접두사 없이 바로 참조 가능)
 
@@ -282,4 +298,4 @@ Preserving this history is mandatory.
 
 ---
 
-*Last Updated: 2026-10-19 (Repository Health 표 2026-10-18 갱신 포함; 구조·우선순위·헤더 현행화). 마지막 번호 세션: Session 49 (2026-06-27 — FR-3 n=5 계산 완료, 문서 일관성 복구)*
+*Last Updated: 2026-11-13 (허브 단일화 반영: Repository Health 표 일부·구조·Key Files 갱신; 2026-10-19 현행화 내용 유지). 마지막 번호 세션: Session 49 (2026-06-27 — FR-3 n=5 계산 완료, 문서 일관성 복구)*
