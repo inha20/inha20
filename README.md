@@ -1,190 +1,38 @@
 # Jonghun Choi (최종훈)
 
-**Independent researcher · 2nd-year student at Inha Technical College**  
-Researching how humans discover structure, assign meaning, and generate research questions.
+**Independent researcher · 2nd-year student at Inha Technical College** (인하공업전문대학 2학년 재학)
 
----
-
-## Abstract
-
-This profile is the entry point to the **Structure Recognition Research Program**, a unified long-term research program investigating how humans discover structure, assign meaning to it, and generate research questions. The program comprises eight papers in eleven repositories (Papers 1–8, Research-Portfolio, ANTIGRAVITY, and this profile repository). Papers 1–6 are archived, read-only early research notes organized under Architecture B (Empirical Foundation Model): three empirical case studies in Boolean function analysis (Karnaugh map visual pattern interpretation, symmetric Boolean function structure, variable rearrangement invariance), a meta-theoretical integration (Structure Recognition Theory, SRT), a methodological self-reflection on long-term human-AI research collaboration, and an early exploration of Boolean function spaces. The current work consists of two standalone papers: Paper 7 (group-theoretic classification of 4-variable Boolean function spaces on Karnaugh maps) and Paper 8 (structural thinking and human-AI research collaboration; SRT, HARCT, a single-case study, and educational implications). The program's central question is: *How do humans come to see something new?*
-
----
-
-## Research Program: Structure Recognition
-
-This profile is the entry point to a unified long-term **AI-assisted research program**.
+I study how people discover structure, give it meaning and turn it into research questions, starting from patterns on Karnaugh maps. The work is AI-assisted: I notice structure and pose the questions, and AI collaborators connect concepts and widen the space of explanations.
 
 > **How do humans come to see something new?**
 
-The program follows a connected sequence from empirical observation to theoretical synthesis. Papers 1–3 provide the observational foundation; Paper 4 synthesizes them into a general framework; Papers 5 and 6 are a methodology study and an early mathematical exploration. Papers 1–6 are archived early research notes (read-only); the current work is the two standalone Papers 7 and 8:
+### → [Research hub: inha20.github.io/Research-Portfolio](https://inha20.github.io/Research-Portfolio/)
 
-| Step | Repository | Topic | Status |
-|---|---|---|---|
-| 1 | [KMap Structure Invariance](https://inha20.github.io/1KMapStructureInvariance/) | Karnaugh map visual patterns; XOR/XNOR checkerboard structures | Archived |
-| 2 | [Symmetric Boolean Functions](https://inha20.github.io/2SymmetricBooleanFunctionMinorThesis/) | Symmetric Boolean functions; Hamming Weight layers; ring structures | Archived |
-| 3 | [Variable Rearrangement Invariance](https://inha20.github.io/3VariableRearrangementInvarianceMinorThesis/) | Variable rearrangement; structural invariance under transformation | Archived |
-| 4 | [Structure Recognition Theory](https://inha20.github.io/4StructureRecognitionTheory/) | Meta-theory explaining why structures become research-worthy | Archived |
-| 5 | [Human-AI Research Collaboration](https://inha20.github.io/5HumanAIResearchCollaboration/) | Long-term Human-AI research collaboration; externalized memory; AI-to-AI handover | Archived |
-| 6 | [Boolean Function Space Theory](https://inha20.github.io/6BooleanFunctionSpaceTheory/) | Early research notes on Boolean function spaces (orbit classification, gate universality); superseded by Paper 7 | Archived |
-| 7 | [Karnaugh Group Classification](https://inha20.github.io/7KarnaughGroupClassification/) · [GitHub](https://github.com/inha20/7KarnaughGroupClassification) | Group-theoretic classification of 4-variable Boolean function spaces on Karnaugh maps | Current |
-| 8 | [Structural Thinking and Human-AI Collaboration](https://inha20.github.io/8StructuralThinkingAndHumanAICollaboration/) · [GitHub](https://github.com/inha20/8StructuralThinkingAndHumanAICollaboration) | Framework proposal (SRT, HARCT), single-case study, and educational implications | Current |
-
-```
-Layer 1 · Empirical Foundation
-  Paper 1 — Karnaugh Map Structure Invariance
-  Paper 2 — Symmetric Boolean Function Visual Patterns
-  Paper 3 — Variable Rearrangement Invariance
-           ↓
-Layer 2 · Theoretical Integration
-  Paper 4 — Structure Recognition Theory (SRT)
-           ↓
-Layer 3 · Methodological Meta-Layer
-  Paper 5 — Human-AI Research Collaboration (HARCT)
-           ↓
-Layer 4 · Mathematical Extension
-  Paper 6 — Boolean Function Space Theory (archived early exploration)
-           ↓
-Synthesis · Standalone Papers
-  Paper 7 — Group-Theoretic Classification of 4-Variable Boolean Function Spaces
-  Paper 8 — Structural Thinking and Human-AI Research Collaboration
-
-Exploratory threads without a paper yet: AI Collaboration Education · Structure-Based Mathematics
-```
-
-Papers 1–6 are archived, read-only research notes; Papers 7 and 8 are the current papers.
+The hub has the program map, all eight papers, the archive of early notes and the order in which the ideas arrived.
 
 ---
 
-## This Repository — Central Hub
+## Current papers
 
-This repository (`inha20`) serves as the **central hub** of the Structure Recognition Research Program. Research documentation, theory summaries, and AI collaboration workspace are maintained here.
+| Paper | Topic | Page language | Links |
+|---|---|---|---|
+| 7 | Group-theoretic classification of 4-variable Boolean function spaces on Karnaugh maps | Korean | [Page](https://inha20.github.io/7KarnaughGroupClassification/) · [GitHub](https://github.com/inha20/7KarnaughGroupClassification) |
+| 8 | Structural thinking and human-AI research collaboration: a framework proposal (SRT, HARCT), a single-case study and educational implications | Korean | [Page](https://inha20.github.io/8StructuralThinkingAndHumanAICollaboration/) · [GitHub](https://github.com/inha20/8StructuralThinkingAndHumanAICollaboration) |
 
-### 허브 문서 (Central Hub Documents)
+Papers 1–6 are archived early research notes (read-only). Their content was consolidated and corrected in Papers 7 and 8.
 
-> **⚠️ 2026-06-21 구조 통합 안내 (Session 33):** 이전에 `program/`, `management/`, `theory/` 하위폴더로 분산되어 있던 프로그램 관리 문서들이 이 저장소 루트의 단일 파일들로 통합되었습니다. `ProjectDashboard.md`, `Research_History.md`는 v5.0 이후 `SESSION_START.md`로 완전 통합(Active Queue, Health 표, 세션 이력 포함).
+## In this repository
 
 | File | Contents |
 |---|---|
-| [SESSION_START.md](SESSION_START.md) | **AI 단일 진입점 (v5.4)** — 프로그램 전체 구조, AI 운영 원칙, 현재 작업 현황(Active Queue, Health 표), 세션 완료 기록(Session 45–49, 2026-06)과 2026-10 갱신 기록 수록 |
-| [StructureRecognitionTheory_Unified.md](StructureRecognitionTheory_Unified.md) | **이론 통합본** — Definitions 3.1–3.3, H1–H10, Q1–Q15, OP-01–09 |
-| [HumanAICollaborationProposal_Outline.md](HumanAICollaborationProposal_Outline.md) | Human-AI 협업 연구 제안서 개요 |
+| [SESSION_START.md](SESSION_START.md) | The single entry point for AI collaborators: program structure, working principles, work queue and repository health (written in Korean) |
+| [StructureRecognitionTheory_Unified.md](StructureRecognitionTheory_Unified.md) | Unified summary of Structure Recognition Theory: definitions 3.1–3.3, hypotheses H1–H10, questions Q1–Q15, open problems OP-01–09 |
+| [HumanAICollaborationProposal_Outline.md](HumanAICollaborationProposal_Outline.md) | Outline of a possible follow-up project; an AI-written draft (v0.1) awaiting the researcher's review |
 
-> 전문 이론 문서 (H1–H10 전문, Level 0–8 구조, OP 전체): [4StructureRecognitionTheory](https://inha20.github.io/4StructureRecognitionTheory/)
+## Other work
 
+Course notes, tools and personal projects live in other repositories of this account. The [repositories tab](https://github.com/inha20?tab=repositories) lists them.
 
+## Contact
 
----
-
-## Human-AI Collaboration
-
-An active thread of the program investigates **human-AI research collaboration** as both a method and a research subject. Humans detect structure and generate research questions; AI connects concepts and expands the explanation space. This division of cognitive labor is itself under study.
-
-This work also explores **knowledge transfer**, **context management**, and **AI-assisted research workflows** across multi-session research programs — areas increasingly relevant as AI tools become integral to academic inquiry.
-
-| Repository | Role | Status |
-|---|---|---|
-| [5HumanAIResearchCollaboration](https://inha20.github.io/5HumanAIResearchCollaboration/) | Long-term Human-AI research collaboration; externalized memory; AI-to-AI handover | Archived |
-| [8StructuralThinkingAndHumanAICollaboration](https://inha20.github.io/8StructuralThinkingAndHumanAICollaboration/) | Current paper: SRT and HARCT framework proposal, single-case study, educational implications | Current |
-| [ANTIGRAVITY](https://inha20.github.io/ANTIGRAVITY/) | AI collaboration workspace; session continuity; handover documents | Monitoring |
-
----
-
-## Research Threads
-
-**Boolean Structure Studies (Papers 1–3)**  
-Observing and documenting specific structural phenomena in Boolean functions visualized through Karnaugh maps. Each paper is an independent case study with its own publication path.
-
-**Structure Recognition Theory — SRT (Paper 4)**  
-A meta-theoretical framework investigating how and why humans detect explanatory significance in observed patterns. Current hypotheses (H1–H10) span structure discovery, attention filtering, the role of representation in research generation, and concept evolution as a generative mechanism (H8–H10, SRT v0.3 통합 확장 가설).
-
-**Human-AI Collaboration (Paper 5, archived; continued in Paper 8)**  
-An ongoing observation: humans detect structure and generate research questions; AI connects concepts and expands explanation space. This division of cognitive labor is itself a research subject.
-
-**AI Collaboration Education**  
-Exploratory. How should collaboration with AI be taught? What skills distinguish productive human-AI inquiry?
-
-**Structure-Based Elementary Mathematics**  
-Exploratory. Reinterpreting elementary mathematics through pattern, structure, and meaning.
-
-**Boolean Function Space Theory (Paper 6, archived)**  
-Archived (early research notes, superseded by Paper 7). Exploring how Boolean function spaces emerge from primitive operators and how these spaces can be recognized, classified, and transformed — extending the research program into applied mathematics via Karnaugh map geometry. Repository: [6BooleanFunctionSpaceTheory](https://inha20.github.io/6BooleanFunctionSpaceTheory/)
-
-**Group-Theoretic Classification (Paper 7, current)**  
-A standalone mathematics paper on the classification of 4-variable Boolean function spaces on Karnaugh maps, readable without the earlier papers. Repository: [7KarnaughGroupClassification](https://inha20.github.io/7KarnaughGroupClassification/) ([GitHub](https://github.com/inha20/7KarnaughGroupClassification))
-
-**Structural Thinking and Human-AI Research Collaboration (Paper 8, current)**  
-A standalone theory-proposal paper (SRT, HARCT) with a single-case study and educational implications, readable without the earlier papers. Repository: [8StructuralThinkingAndHumanAICollaboration](https://inha20.github.io/8StructuralThinkingAndHumanAICollaboration/) ([GitHub](https://github.com/inha20/8StructuralThinkingAndHumanAICollaboration))
-
----
-
-## Concept Genealogy
-
-The following sequence represents the actual historical development of the research program — not a logical reconstruction, but a record of discovery:
-
-```
-Pattern
- ↓  (1st observation: Karnaugh map checkerboards)
-Layer Structure
- ↓  (Hamming Weight layers explain pattern positions)
-Equivalence
- ↓  (functions with same pattern under different arrangements)
-Structural Invariance
- ↓  (what is preserved across variable rearrangements?)
-Structure Recognition Theory
- ↓  (why do certain structures become research-worthy?)
-Human-AI Collaboration Model
- ↓  (what roles do humans and AI play in discovery?)
-Standalone Papers 7 and 8 (current)
- ↓  (group-theoretic classification; structural thinking and human-AI research collaboration)
-[Future: AI Education · Structure-Based Mathematics]
-```
-
----
-
-## Research Generation Framework
-
-```
-Difference → Attention → Structure → Meaning → Research Worthiness → Question → Research
-```
-
----
-
-## Selected Keywords
-
-`Karnaugh map` · `Boolean function` · `structural invariance` · `structure recognition`  
-`symmetric Boolean function` · `variable rearrangement` · `Hamming weight`  
-`human-AI collaboration` · `AI-assisted research` · `knowledge transfer` · `context management`  
-`visual pattern analysis` · `research question generation` · `research program`
-
----
-
-## Current Status (as of 2026-10-19)
-
-Current work: the standalone Papers 7 (group-theoretic classification) and 8 (structural thinking and human-AI research collaboration). Papers 1–6 are archived early research notes (read-only).
-
-- Paper 7 — Group-Theoretic Classification of 4-Variable Boolean Function Spaces on Karnaugh Maps: [Pages](https://inha20.github.io/7KarnaughGroupClassification/) · [GitHub](https://github.com/inha20/7KarnaughGroupClassification)
-- Paper 8 — Structural Thinking and Human-AI Research Collaboration in the Generative AI Era: [Pages](https://inha20.github.io/8StructuralThinkingAndHumanAICollaboration/) · [GitHub](https://github.com/inha20/8StructuralThinkingAndHumanAICollaboration)
-
-The program consists of 11 repositories: Papers 1–8, Research-Portfolio, ANTIGRAVITY, and this repository (`inha20`).
-
-Central hub: this repository (`inha20`)
-
----
-
-## Other Repositories
-
-The account `inha20` also holds repositories outside this research program: course notes, tools and personal projects (35 public repositories as of 2026-10-19). They are organized as public [GitHub Lists](https://github.com/inha20?tab=stars) in a folder-like tree. The list names below are shown as they appear on GitHub.
-
-| Group | Lists |
-|---|---|
-| 연구 (11) | 연구 › 현재 논문 · 연구 › 보관된 연구 노트 · 연구 › 운영·허브 |
-| 도구 (3) | 도구 › 툴킷·시뮬레이터 |
-| 학습 (13) | 학습 › 자료구조 · 학습 › 데이터·DB·시각화 · 학습 › 프로그래밍·언어 · 학습 › AI·구조 교육 콘텐츠 · 학습 › 기타 |
-| 개인 (8) | 개인 › 앱 프로젝트 · 개인 › 글·메모·문서 |
-
-Only the 연구 group belongs to this program. The other groups are independent of it.
-
----
-
-> *"Understanding a structure is different from memorizing its result."*
+cjh3cjh@naver.com
