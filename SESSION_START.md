@@ -44,6 +44,7 @@ Do **not** begin working on any repository without reading this document in full
   - 저장소 이름 변경: `7GroupTheoryBooleanUnification` → `7KarnaughGroupClassification`, `8StructuralThinkingInAIEra` → `8StructuralThinkingAndHumanAICollaboration`. 이 저장소의 링크·라벨도 새 이름으로 갱신.
 - **2026-10-19 — 이 문서의 현행화:** 헤더 날짜, Repository Health 표(Research-Portfolio 행 추가, inha20 행 문구 정정), 연구 우선순위, 프로그램 구조 절을 1~6번 보관 / 7·8번 현재 구조로 맞춤. 2026-06의 세션 기록(Session 45–49)은 그대로 둠.
 - **2026-10-24 — 소속 표기 정정(졸업 → 재학):** 사용자 확인 사실(인하공업전문대학 2학년 재학생)에 따라 이 저장소의 `index.html`(명함 팝업·히어로·소개·푸터·메타 설명), `README.md`, 이 문서의 저자 표기를 `Graduate of Inha Technical College` / `인하공업전문대학 졸업`에서 `2nd-year student at Inha Technical College` / `인하공업전문대학 2학년 재학`으로 수정. Session 47(2026-06-27)의 `출신` 정정 기록은 당시 기록이므로 그대로 둠. 다른 저장소(Papers 1–8, Research-Portfolio, ANTIGRAVITY)의 동일 표기는 이 저장소 범위 밖이라 미반영.
+- **2026-11-13 — 이미지 생성 규칙 삭제:** 연구자(소유자) 요청에 따라 `Critical Workflow Rules`의 3번 `Image Creation Rule`(이미지는 사람이 만든 스타일로 통일, AI 이미지 도구·AI가 작성한 그림 코드 금지)을 삭제함. 이후 이미지 파일의 제작 방식에는 이 문서가 별도 제한을 두지 않음. Session 46 기록 등 과거 기록은 당시 기록이므로 그대로 두고, 다른 저장소의 문서에 따로 적힌 제작 지침은 그 저장소 범위라 이 변경에 포함하지 않음.
 
 #### 📝 Session 49 완료 기록 (2026-06-27)
 - **FR-3 n=5 군론 계산 완료 및 문서 일관성 복구:**
@@ -178,13 +179,6 @@ A recurring pattern has emerged (treat as working hypothesis, not conclusion):
 - **1단계 (중요도 역순):** 가장 광범위하게 참조되는 파일부터 수정한다.
 - **2단계 (원자적 검증):** 파일 하나 편집 완료 직후 다시 읽어(re-read) 수정이 올바른지 확인한다.
 - **3단계 (일관성 점검):** 버전 번호 동시 업데이트 및 세션 기록 동기화를 수행한다.
-
-### 3. Image Creation Rule (이미지 생성 규칙 — HARD RULE)
-> **모든 이미지 파일은 사람이 생성한 스타일로 통일한다.**
-
-- **허용:** PowerPoint, Keynote, Draw.io, 손 그림 스캔, 연구자가 직접 작성한 SVG.
-- **절대 금지:** AI 이미지 생성 도구(DALL-E, SD 등) 사용 금지, AI가 작성한 Python/matplotlib/LaTeX/TikZ 코드로 그림 생성 금지.
-- AI의 역할은 "본문에 텍스트 플레이스홀더 삽입"과 "그림 명세서(Specification) 작성"에 한정됩니다.
 
 ---
 
